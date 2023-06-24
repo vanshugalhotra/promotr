@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 
 // Component imports
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 //css imports
 import "@/styles/globals.css";
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <Navbar />
         <Component {...pageProps} />
+        <Footer />
       </Provider>
     </>
   );

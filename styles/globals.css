@@ -76,4 +76,35 @@
   .btn-primary {
     @apply inline-block capitalize bg-[var(--main-black)] py-[12px] px-[30px] outline-none cursor-pointer font-medium text-[16px] leading-relaxed text-[var(--main-white)] rounded-lg tracking-wide border-2 border-[var(--main-black)] transition-all duration-200 ease-in-out hover:text-[var(--main-black)] hover:bg-transparent;
   }
+
+  /* footer */
+
+  .footer-info-item {
+    @apply px-[70px];
+  }
+
+  .footer-info-title {
+    @apply text-[18px] text-[var(--main-white)] font-normal;
+  }
+  .footer-info-desc {
+    @apply text-[12px] uppercase font-medium tracking-wider text-gray-200;
+  }
+  .footer-info-text {
+    @apply py-[8px] px-[2px] text-[15px] font-medium tracking-wider text-gray-200 transition-all duration-200 ease-in-out cursor-pointer;
+  }
+
+  .footer-info-links {
+    @apply mt-[20px] inline-flex justify-center items-center;
+  }
+
+  .footer-link {
+    @apply w-[35px] h-[35px] rounded-full border border-white flex items-center justify-center transition-all duration-500 ease-in-out cursor-pointer mr-[15px] hover:border-black hover:bg-[var(--main-white)];
+  }
+  .footer-link:hover > svg {
+    @apply invert-0;
+  }
+
+  .footer-link svg {
+    @apply w-[18px] h-[18px] invert;
+  }
 }
