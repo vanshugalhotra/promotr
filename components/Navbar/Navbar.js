@@ -52,6 +52,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      <div className="nav-icons"></div>
     </nav>
   );
 };

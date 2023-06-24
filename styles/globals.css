@@ -10,12 +10,10 @@
 }
 
 :root {
-  --font1: "DM Sans", sans-serif;
-  --font2: "Montserrat", sans-serif;
-
   /* colors */
 
-  --main-black: #13131a;
+  /* --main-black: #13131a; */
+  --main-black: #111111;
   --main-grey: #2f2f2f;
   --main-white: #f5f5fa;
   --main-yellow: #f9cc4f;
@@ -39,6 +37,27 @@
   width: 100%;
 }
 
+.content-text {
+  background-image: url("/Assets/others/before.png");
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 230px auto;
+  margin: 0 150px 0 0px;
+}
+
+@keyframes rotateStar {
+  0% {
+    transform: rotate(0deg) scale(0.95);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.05);
+  }
+}
+
+.content .star {
+  animation: rotateStar 3s linear infinite;
+}
+
 @layer components {
   /* navbar */
 
@@ -51,5 +70,10 @@
 
   .nav-item-active a {
     @apply text-[var(--main-grey)];
+  }
+
+  /* buttons */
+  .btn-primary {
+    @apply inline-block capitalize bg-[var(--main-black)] py-[12px] px-[30px] outline-none cursor-pointer font-medium text-[16px] leading-relaxed text-[var(--main-white)] rounded-lg tracking-wide border-2 border-[var(--main-black)] transition-all duration-200 ease-in-out hover:text-[var(--main-black)] hover:bg-transparent;
   }
 }
