@@ -224,6 +224,7 @@ const Navbar = () => {
                   <button
                     className="mobile-link flex items-center cursor-pointer focus:outline-none"
                     href={url}
+                    onClick={dropdown.toggleDropDown}
                   >
                     {name}
                     <FontAwesomeIcon
@@ -231,6 +232,23 @@ const Navbar = () => {
                       className="w-4 h-4 ml-2"
                     />
                   </button>
+                  <ul
+                    className={`flex flex-col ${
+                      dropdown.showDropDown ? "max-h-full mt-0" : "max-h-0 mt-2"
+                    } overflow-y-auto transition-max-height duration-100 ease-in-out`}
+                  >
+                    {dropdown.links.map(({ name, url }) => {
+                      return (
+                        <Link
+                          className="mobile-link px-6"
+                          href={url}
+                          key={name}
+                        >
+                          {name}
+                        </Link>
+                      );
+                    })}
+                  </ul>
                 </div>
               );
             } else {
@@ -246,7 +264,10 @@ const Navbar = () => {
           className="close-icon absolute top-4 right-4"
           onClick={toggleMenu}
         >
-          <FontAwesomeIcon icon={faXmark} className="w-6 h-6 text-white" />
+          <FontAwesomeIcon
+            icon={faXmark}
+            className="w-6 h-6 text-[var(--main-yellow)]"
+          />
         </button>
       </div>
     </>
