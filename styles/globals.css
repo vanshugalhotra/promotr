@@ -60,7 +60,7 @@
   /* navbar */
 
   .nav-item {
-    @apply text-[20px] py-[5px] px-[20px] transition-all duration-200 ease-out cursor-pointer font-semibold tracking-wide capitalize;
+    @apply text-[20px] py-1 px-6 transition-all duration-200 ease-out cursor-pointer font-semibold tracking-wide capitalize;
   }
   .nav-item a {
     @apply text-[var(--main-black)] relative;
@@ -68,6 +68,10 @@
 
   .nav-item-active a {
     @apply text-[var(--main-grey)];
+  }
+
+  .dropdown-link {
+    @apply block px-6 py-3 hover:bg-gray-200 text-[var(--main-black)] transition-colors duration-200 text-sm rounded-sm;
   }
 
   /* buttons */

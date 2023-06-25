@@ -16,7 +16,9 @@ const LandingPage = () => {
     linesDim = 30;
   }
   return (
-    <div className=" bg-[var(--main-yellow)] ">
+    <div className=" bg-[var(--main-yellow)] relative w-full">
+      <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/others/shape.png')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[0.04]"></div>
+      {/* Your content here */}
       <Navbar />
       <div className="content relative h-[80vh] flex items-center justify-center">
         <div className="content-text-button relative p-2 md:px-8  md:max-w-[1238px] z-10 inline-flex flex-col items-center justify-center">
@@ -31,7 +33,7 @@ const LandingPage = () => {
             </div>
 
             <div className="relative">
-              <div className="absolute  top-[19%] left-[22%] xs:left-[15%] lg:top-[24%] lg:left-[15%] transform -translate-x-1/2 -translate-y-1/2 w-24 h-12 xs:w-32 xs:h-16 md:w-56 md:h-28   rounded-full z-0 bg-[#E9D175]"></div>
+              <div className="absolute  top-[19%] left-[22%] xs:left-[15%] lg:top-[24%] lg:left-[15%] transform -translate-x-1/2 -translate-y-1/2 w-24 h-12 xs:w-32 xs:h-16 md:w-56 md:h-28 rounded-full z-0 bg-[#E9D175] opacity-80"></div>
               <div className="relative z-10">
                 <div className="text-4xl xs:text-5xl md:text-8xl text-[var(--main-black)] font-semibold text-center !leading-normal md:leading-[7.5rem] tracking-wide">
                   <span className="relative">
