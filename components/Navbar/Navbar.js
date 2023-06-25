@@ -2,11 +2,16 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+// Redux
+import { useSelector } from "react-redux";
+
 // Icons import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
+  const windowWidth = useSelector((state) => state.global.windowWidth);
+
   return (
     <nav
       id="navbar"
@@ -19,8 +24,8 @@ const Navbar = () => {
         <Image
           alt="Promotr"
           src={"/Assets/logo/logo.png"}
-          width={170}
-          height={170}
+          width={windowWidth > 768 ? 170 : 220}
+          height={windowWidth > 768 ? 170 : 220}
         />
       </Link>
       <div className="nav-items-container">

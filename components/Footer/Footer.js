@@ -6,12 +6,12 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-[var(--main-black)] grid grid-cols-3 justify-between items-center px-[100px]">
-      <div className="footer-logo">
+    <footer className="footer bg-[var(--main-black)] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-between items-center md:px-[100px] px-12 xs:px-24 py-4">
+      <div className="footer-logo inline-block m-auto lg:m-0 sm:col-span-2 lg:col-span-1">
         <Image
           alt="promotr"
           src={"/Assets/logo/logo_white.png"}
-          className="invert mb-[70px]"
+          className="invert mb-[10px] md:mb-[70px]"
           width={197}
           height={120}
         />

@@ -15,8 +15,12 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        xs: "380px",
+      },
       fontFamily: {
         sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
+        // sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
     },
   },

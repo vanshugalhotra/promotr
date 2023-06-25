@@ -2,33 +2,53 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// Redux
+import { useSelector } from "react-redux";
+
 const LandingPage = () => {
+  const windowWidth = useSelector((state) => state.global.windowWidth);
+
+  let linesDim = 40;
+  if (windowWidth <= 380) {
+    linesDim = 20;
+  } else if (windowWidth > 380 && windowWidth < 767) {
+    linesDim = 30;
+  }
   return (
-    <div className="content relative h-[80vh] ">
-      <div className="content-text-button relative p-2 md:px-8 top-[15%] md:left-[15%] md:max-w-[1238px] z-10 inline-flex flex-col items-center justify-center">
+    <div className="content relative h-[80vh] flex items-center justify-center ">
+      <div className="content-text-button relative p-2 md:px-8  md:max-w-[1238px] z-10 inline-flex flex-col items-center justify-center">
         <div className="content-text">
-          <div className="lines md:inline-block absolute -left-5 -top-5 hidden">
+          <div className="lines lg:inline-block absolute -top-4 left-16 hidden">
             <Image
               alt=""
               src={"/Assets/others/lines.png"}
-              width={40}
-              height={40}
+              width={linesDim}
+              height={linesDim}
             />
           </div>
-          <div className="text text-4xl md:text-8xl text-[var(--main-black)] font-medium text-center  leading-normal md:leading-[7.5rem] tracking-wide">
-            <span className="">
-              Your Brand&apos;s{" "}
-              <span className="text-[var(--main-white)]">Biggest</span>{" "}
-              Cheerleaders
-            </span>
-          </div>
-          <div className="star absolute md:right-16 md:bottom-20">
-            <Image
-              alt=""
-              src={"/Assets/others/star.png"}
-              width={60}
-              height={60}
-            />
+
+          <div className="relative">
+            <div className="absolute  top-[19%] left-[22%] xs:left-[15%] lg:top-[24%] lg:left-[15%] transform -translate-x-1/2 -translate-y-1/2 w-24 h-12 xs:w-32 xs:h-16 md:w-56 md:h-28   rounded-full z-0 bg-[#E9D175]"></div>
+            <div className="relative z-10">
+              <div className="text-4xl xs:text-5xl md:text-8xl text-[var(--main-black)] font-semibold text-center !leading-normal md:leading-[7.5rem] tracking-wide">
+                <span className="relative">
+                  Your
+                  <span className="text-[var(--main-white)]">
+                    {" "}
+                    Brand&apos;s
+                  </span>{" "}
+                  Biggest Cheerleaders
+                </span>
+              </div>
+            </div>
+            <div className="star absolute right-2 bottom-8">
+              <Image
+                alt=""
+                src={"/Assets/others/star.png"}
+                width={windowWidth > 380 ? 60 : 40}
+                height={windowWidth > 380 ? 60 : 40}
+              />
+            </div>
           </div>
         </div>
         <div className="button-div my-12 md:mx-2">
