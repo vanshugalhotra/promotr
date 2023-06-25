@@ -35,7 +35,7 @@ const LandingPage = () => {
             <div className="relative">
               <div className="absolute  top-[19%] left-[22%] xs:left-[15%] lg:top-[24%] lg:left-[15%] transform -translate-x-1/2 -translate-y-1/2 w-24 h-12 xs:w-32 xs:h-16 md:w-56 md:h-28 rounded-full z-0 bg-[#E9D175] opacity-80"></div>
               <div className="relative z-10">
-                <div className="text-4xl xs:text-5xl md:text-8xl text-[var(--main-black)] font-semibold text-center !leading-normal md:leading-[7.5rem] tracking-wide">
+                <div className="text-4xl xs:text-5xl md:text-8xl text-[var(--main-black)] font-semibold text-center md:leading-[7.5rem] leading-normal  tracking-wide">
                   <span className="relative">
                     Your
                     <span className="text-[var(--main-white)]">

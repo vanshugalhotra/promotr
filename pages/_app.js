@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 // Component imports
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import TopLoadingBar from "@/components/LoadingBar/TopLoadingBar";
 
 //css imports
 import "@/styles/globals.css";
@@ -51,6 +52,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Provider store={store}>
+        <TopLoadingBar />
         {!isHomePage && <Navbar />}
         <Component {...pageProps} />
         <Footer />

@@ -74,6 +74,10 @@
     @apply block px-6 py-3 hover:bg-gray-200 text-[var(--main-black)] transition-colors duration-200 text-sm rounded-sm;
   }
 
+  .mobile-link {
+    @apply my-2 text-[var(--main-white)] transition-colors duration-300 transform md:mx-4 md:my-0;
+  }
+
   /* buttons */
   .btn-primary {
     @apply inline-block capitalize bg-[var(--main-black)] py-[12px] px-[30px] outline-none cursor-pointer font-medium text-[16px] leading-relaxed text-[var(--main-white)] rounded-lg tracking-wide border-2 border-[var(--main-black)] transition-all duration-200 ease-in-out hover:text-[var(--main-black)] hover:bg-transparent;
