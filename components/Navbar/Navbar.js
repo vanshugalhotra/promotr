@@ -14,6 +14,66 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
+const NavItem = ({ name, url }) => {
+  return (
+    <li className="nav-item">
+      <Link href={url} className="bottom-line">
+        {name}
+      </Link>
+    </li>
+  );
+};
+
+const NavItemDropDown = ({
+  handleMouseEnter,
+  handleMouseLeave,
+  handleDropDownFocus,
+  handleDropDownBlur,
+  toggleDropDown,
+  showDropDown,
+  name,
+  links,
+}) => {
+  return (
+    <li
+      className="nav-item relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        className="bottom-line flex items-center justify-center cursor-pointer focus:outline-none"
+        onClick={toggleDropDown}
+      >
+        {name}
+        <FontAwesomeIcon icon={faCaretDown} className="w-4 h-4 ml-2" />
+      </button>
+      {showDropDown && (
+        <div
+          className=""
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onFocus={handleDropDownFocus}
+          onBlur={handleDropDownBlur}
+        >
+          <ul
+            className={`absolute py-2 bg-[var(--main-white)] bg-opacity-80 rounded-md shadow-lg cursor-pointer z-[100] mt-4`}
+          >
+            {links.map(({ name, url }, index) => {
+              return (
+                <li key={index}>
+                  <Link href={url} className="dropdown-link">
+                    {name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+    </li>
+  );
+};
+
 const Navbar = () => {
   const dispatch = useDispatch();
 
@@ -31,26 +91,78 @@ const Navbar = () => {
     dispatch(toggle());
   };
 
-  const handleMouseEnter = () => {
+  const toggleServicesDropDown = () => {
+    setShowServicesDropdown(!showServicesDropdown);
+  };
+
+  const handleServicesMouseEnter = () => {
     clearTimeout(showDropdownTimeout);
     setShowServicesDropdown(true);
   };
 
-  const handleMouseLeave = () => {
+  const handleServicesMouseLeave = () => {
     const timeout = setTimeout(() => {
       setShowServicesDropdown(false);
     }, 200); // Adjust the delay duration as needed (in milliseconds)
     setShowDropdownTimeout(timeout);
   };
 
-  const handleDropdownFocus = () => {
+  const handleServicesDropDownFocus = () => {
     clearTimeout(showDropdownTimeout);
     setShowServicesDropdown(true);
   };
 
-  const handleDropdownBlur = () => {
+  const handleServicesDropDownBlur = () => {
     setShowServicesDropdown(false);
   };
+
+  // Local Variables
+
+  const navbarLinks = [
+    {
+      name: "Home",
+      url: "/",
+    },
+    {
+      name: "Services",
+      url: "/",
+      dropdown: {
+        links: [
+          {
+            name: "Marketing",
+            url: "/marketing",
+          },
+          {
+            name: "Graphic Designing",
+            url: "/graphic_designing",
+          },
+          {
+            name: "Web Development",
+            url: "/webdevelopment",
+          },
+        ],
+        toggleDropDown: toggleServicesDropDown,
+        showDropDown: showServicesDropdown,
+        handleMouseEnter: handleServicesMouseEnter,
+        handleMouseLeave: handleServicesMouseLeave,
+        handleDropDownBlur: handleServicesDropDownBlur,
+        handleDropDownFocus: handleServicesDropDownFocus,
+      },
+    },
+    {
+      name: "Events",
+      url: "/events",
+    },
+    {
+      name: "About Us",
+      url: "/about",
+    },
+    {
+      name: "Contact",
+      url: "/contact",
+    },
+  ];
+
   return (
     <>
       <nav
@@ -74,72 +186,25 @@ const Navbar = () => {
 
         <div className="nav-items-container">
           <ul className="nav-items md:flex hidden items-center justify-center">
-            <li className="nav-item">
-              <Link href={"/"} className="bottom-line">
-                Home
-              </Link>
-            </li>
-
-            <li
-              className="nav-item relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button
-                className="bottom-line flex items-center justify-center cursor-pointer focus:outline-none"
-                onClick={() => {
-                  setShowServicesDropdown(!showServicesDropdown);
-                }}
-              >
-                Services
-                <FontAwesomeIcon icon={faCaretDown} className="w-4 h-4 ml-2" />
-              </button>
-              {showServicesDropdown && (
-                <div
-                  className=""
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  onFocus={handleDropdownFocus}
-                  onBlur={handleDropdownBlur}
-                >
-                  <ul
-                    className={`absolute py-2 bg-[var(--main-white)] bg-opacity-80 rounded-md shadow-lg cursor-pointer z-[100] mt-4`}
-                  >
-                    <li>
-                      <Link href={"/service1"} className="dropdown-link">
-                        Marketing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={"/service2"} className="dropdown-link">
-                        Graphic Designing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={"/service3"} className="dropdown-link">
-                        Web Development
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
-
-            <li className="nav-item">
-              <Link href={"/"} className="bottom-line">
-                Events
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href={"/"} className="bottom-line">
-                About Us
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href={"/contact"} className="bottom-line">
-                Contact
-              </Link>
-            </li>
+            {navbarLinks.map(({ name, url, dropdown }) => {
+              if (dropdown) {
+                return (
+                  <NavItemDropDown
+                    key={name}
+                    name={name}
+                    links={dropdown.links}
+                    handleMouseEnter={dropdown.handleMouseEnter}
+                    handleMouseLeave={dropdown.handleMouseLeave}
+                    handleDropDownBlur={dropdown.handleDropDownBlur}
+                    handleDropDownFocus={dropdown.handleDropDownFocus}
+                    toggleDropDown={dropdown.toggleDropDown}
+                    showDropDown={dropdown.showDropDown}
+                  />
+                );
+              } else {
+                return <NavItem name={name} url={url} key={name} />;
+              }
+            })}
           </ul>
         </div>
         <div className="nav-icons"></div>
@@ -152,27 +217,30 @@ const Navbar = () => {
         } md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center transition-all duration-500 ease-in-out`}
       >
         <div className="flex flex-col md:flex-row md:mx-6">
-          <Link className="mobile-link" href={"/"}>
-            Home
-          </Link>
-          <div>
-            <button
-              className="mobile-link flex items-center cursor-pointer focus:outline-none"
-              href={"/"}
-            >
-              Services
-              <FontAwesomeIcon icon={faCaretDown} className="w-4 h-4 ml-2" />
-            </button>
-          </div>
-          <Link className="mobile-link" href={"/"}>
-            Events
-          </Link>
-          <Link className="mobile-link" href={"/"}>
-            About Us
-          </Link>
-          <Link className="mobile-link" href={"/"}>
-            Contact
-          </Link>
+          {navbarLinks.map(({ name, url, dropdown }) => {
+            if (dropdown) {
+              return (
+                <div key={name}>
+                  <button
+                    className="mobile-link flex items-center cursor-pointer focus:outline-none"
+                    href={url}
+                  >
+                    {name}
+                    <FontAwesomeIcon
+                      icon={faCaretDown}
+                      className="w-4 h-4 ml-2"
+                    />
+                  </button>
+                </div>
+              );
+            } else {
+              return (
+                <Link className="mobile-link" href={url} key={name}>
+                  {name}
+                </Link>
+              );
+            }
+          })}
         </div>
         <button
           className="close-icon absolute top-4 right-4"
