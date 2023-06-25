@@ -45,10 +45,13 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router]);
 
+  // Check if the current route is the home page ("/")
+  const isHomePage = router.pathname === "/";
+
   return (
     <>
       <Provider store={store}>
-        <Navbar />
+        {!isHomePage && <Navbar />}
         <Component {...pageProps} />
         <Footer />
       </Provider>

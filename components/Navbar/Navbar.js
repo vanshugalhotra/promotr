@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav
       id="navbar"
-      className="flex items-center justify-around border-b border-b-[var(--color-grey-1)] bg-[var(--main-yellow)]"
+      className="flex items-center justify-around border-b border-b-[var(--color-grey-1)]"
     >
       <div className="menu-bar md:hidden text-2xl mx-6">
         <FontAwesomeIcon icon={faBars} />
@@ -23,7 +23,7 @@ const Navbar = () => {
       <Link className="nav-logo" href={"/"}>
         <Image
           alt="Promotr"
-          src={"/Assets/logo/logo.png"}
+          src={"/Assets/logo/logo_white.png"}
           width={windowWidth > 768 ? 170 : 220}
           height={windowWidth > 768 ? 170 : 220}
         />
@@ -51,7 +51,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link href={"/"} className="bottom-line">
+            <Link href={"/contact"} className="bottom-line">
               Contact
             </Link>
           </li>

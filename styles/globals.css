@@ -17,6 +17,7 @@
   --main-grey: #2f2f2f;
   --main-white: #f5f5fa;
   --main-yellow: #f9cc4f;
+  --secondary-yellow: #fdcb43ea;
   --main-orange: #f05024;
 
   --color-grey-1: #0000000d;
@@ -35,6 +36,11 @@
 
 .bottom-line:hover::after {
   width: 100%;
+}
+
+.contact-left {
+  background-size: 70% auto;
+  height: calc(100% - 20px);
 }
 
 @keyframes rotateStar {
@@ -98,5 +104,14 @@
 
   .footer-link svg {
     @apply w-[18px] h-[18px] invert;
+  }
+
+  /* contact */
+  .contact-left {
+    @apply w-[90%] lg:w-2/5 bg-[var(--secondary-yellow)] bg-[url('/Assets/others/circle.webp')]  bg-no-repeat bg-auto bg-right-bottom m-2 rounded-2xl flex items-center flex-col justify-between pb-32 pt-10;
+  }
+
+  .form-control {
+    @apply relative block text-sm font-medium leading-5 text-gray-700 bg-transparent border border-gray-200 p-4 w-full mt-4 outline-none transition-all duration-300 hover:border-gray-700 hover:-translate-y-1;
   }
 }
