@@ -1,0 +1,34 @@
+import React from "react";
+
+import {
+  faPenRuler,
+  faLaptopCode,
+  faChartLine,
+} from "@fortawesome/free-solid-svg-icons";
+import ServiceCard from "@/components/Cards/ServiceCard";
+
+const Services = () => {
+  return (
+    <section className="flex justify-center items-center h-screen">
+      <div className="services-cards grid grid-cols-3">
+        <ServiceCard
+          name={"Graphic Designing"}
+          desc={"Lorem ipsum is are many variations of pass of majority."}
+          icon={faPenRuler}
+        />
+        <ServiceCard
+          name={"Traditional Marketing"}
+          desc={"Lorem ipsum is are many variations of pass of majority."}
+          icon={faChartLine}
+        />
+        <ServiceCard
+          name={"Web Development"}
+          desc={"Lorem ipsum is are many variations of pass of majority."}
+          icon={faLaptopCode}
+        />
+      </div>
+    </section>
+  );
+};
+
+export default Services;

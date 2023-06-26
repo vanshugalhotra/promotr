@@ -7,14 +7,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 :root {
   /* colors */
-
-  /* --main-black: #13131a; */
   --main-black: #111111;
   --main-grey: #2f2f2f;
+  --secondary-grey: #686a6f;
   --main-white: #f5f5fa;
   --main-yellow: #f9cc4f;
   --secondary-yellow: #fdcb43ea;
@@ -54,6 +54,60 @@
 
 .content .star {
   animation: rotateStar 3s linear infinite;
+}
+
+/* services */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card {
+  visibility: visible;
+  animation-duration: 1500ms;
+  animation-delay: 0ms;
+  animation-name: fadeInUp;
+}
+
+.inner-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.04);
+  transition: all 500ms ease;
+}
+.service-card:hover .inner-box:before {
+  background-color: #222429 !important;
+  bottom: -10px !important;
+}
+
+.bottom-curve {
+  transition: transform 0.5s ease-in-out;
+}
+
+.service-card:hover .icon-box {
+  color: #ffaa17 !important;
+}
+
+.service-card:hover h5 span {
+  color: #ffffff !important;
+}
+
+.service-card:hover .desc {
+  color: #999b9f;
 }
 
 @layer components {
@@ -122,4 +176,6 @@
   .form-control {
     @apply relative block text-sm font-medium leading-5 text-gray-700 bg-transparent border border-gray-200 p-4 w-full mt-4 outline-none transition-all duration-300 hover:border-gray-700 hover:-translate-y-1;
   }
+
+  /* services */
 }

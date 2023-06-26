@@ -57,7 +57,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="button-div my-12 md:mx-2">
-            <Link className="btn-primary" href={"/contact"}>
+            <Link className="btn-primary" href={"/services/services"}>
               Get Started
             </Link>
           </div>
