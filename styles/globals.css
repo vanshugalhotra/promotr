@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
+
 /* CSS Reset */
 * {
   margin: 0;
@@ -13,15 +15,20 @@
 :root {
   /* colors */
   --main-black: #111111;
+  --secondary-black: #222429;
   --main-grey: #2f2f2f;
   --secondary-grey: #686a6f;
   --main-white: #f5f5fa;
+  --secondary-white: #ffffff;
   --main-yellow: #f9cc4f;
   --secondary-yellow: #fdcb43ea;
   --main-orange: #f05024;
 
   --color-grey-1: #0000000d;
+  --color-grey-2: #999b9f;
   --color-grey-5: #2a2e35;
+  --color-black-1: #1c1e22;
+  --color-yellow-1: #ffaa17;
 }
 
 .bottom-line::after {
@@ -32,6 +39,10 @@
   width: 0%;
   border-bottom: 2px solid var(--main-black);
   transition: 0.5s;
+}
+
+.services-title-box .title {
+  font-family: "Teko", sans-serif;
 }
 
 .bottom-line:hover::after {
@@ -108,6 +119,22 @@
 
 .service-card:hover .desc {
   color: #999b9f;
+}
+
+.service-card-small:hover .box {
+  background-color: var(--color-yellow-1);
+}
+
+.service-card-small:hover .icon-box {
+  color: #1c1e22 !important;
+}
+
+.service-card-small:hover h5 span {
+  color: var(--secondary-black) !important;
+}
+
+.service-card-small:hover .counter {
+  color: var(--color-black-1);
 }
 
 @layer components {

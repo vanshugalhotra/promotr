@@ -9,8 +9,8 @@ import ServiceCard from "@/components/Cards/ServiceCard";
 
 const Services = () => {
   return (
-    <section className="flex justify-center items-center h-screen">
-      <div className="services-cards grid grid-cols-3">
+    <section className="flex justify-center items-center my-10">
+      <div className="services-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <ServiceCard
           name={"Graphic Designing"}
           desc={"Lorem ipsum is are many variations of pass of majority."}

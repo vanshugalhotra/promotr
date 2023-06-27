@@ -9,7 +9,7 @@ const TopLoadingBar = () => {
 
   return (
     <LoadingBar
-      color="#f05024"
+      color="#111111"
       progress={progress}
       waitingTime={400}
       onLoaderFinished={() => {
