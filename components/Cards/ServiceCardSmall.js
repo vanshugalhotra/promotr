@@ -16,7 +16,7 @@ const ServiceCardSmall = ({ name, icon, counter }) => {
   };
   return (
     <div
-      className="service-card-small relative mb-8 px-4 w-[320px] cursor-pointer"
+      className="service-card-small relative mb-8 px-4 w-[270px] xs:w-[320px] cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -26,11 +26,11 @@ const ServiceCardSmall = ({ name, icon, counter }) => {
           className="bottom-curve absolute -right-[70px] bottom-0 w-[100px] h-4/5 bg-[var(--secondary-black)] opacity-20 z-0"
         ></div>
         <div className="top flex justify-between items-center">
-          <div className="counter text-[46px] leading-[1em] text-[var(--secondary-white)] opacity-[0.07] font-light mb-8 z-10">
+          <div className="counter text-[35px] xs:text-[46px] leading-[1em] text-[var(--secondary-white)] opacity-[0.07] font-light mb-8 z-10">
             {counter}
           </div>
           <div className="icon-box relative block text-[var(--color-yellow-1)] text-[64px] leading-[1em] mb-5 transition-color duration-500 ease-in-out">
-            <FontAwesomeIcon icon={icon} className="w-12 h-12" />
+            <FontAwesomeIcon icon={icon} className="xs:w-12 xs:h-12 w-8 h-8" />
           </div>
         </div>
         <h5 className="title h-12 text-[17px] uppercase font-semibold tracking-[1px] leading-[1.1em] mt-2 relative max-w-[30px]">

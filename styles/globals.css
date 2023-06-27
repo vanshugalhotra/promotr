@@ -31,6 +31,8 @@
   --color-yellow-1: #ffaa17;
 }
 
+
+
 .bottom-line::after {
   content: "";
   position: absolute;

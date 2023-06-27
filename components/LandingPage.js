@@ -80,10 +80,10 @@ const LandingPage = () => {
       <div className="bg-[var(--secondary-black)] relative w-full">
         <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/others/shape.png')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[0.02] before:-z-0 before:invert"></div>
         {/* Your content here */}
-        <div className="services-content py-28 flex justify-center items-center ">
-          <div className="content grid grid-cols-4 max-w-[1200px] mx-auto gap-5">
-            <div className="services-title-box col-span-2">
-              <div className="title text-[55px] leading-tight font-medium tracking-wide text-[var(--secondary-white)] uppercase">
+        <div className="services-content py-12 md:py-20 lg:py-28 flex justify-center items-center ">
+          <div className="content grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:max-w-[1200px] mx-auto gap-5 items-center justify-center">
+            <div className="services-title-box col-span-1 xl:col-span-2 px-12 py-6">
+              <div className="title text-[30px] md:text-[40px] lg:text-[55px] leading-tight font-medium tracking-wide text-[var(--secondary-white)] uppercase">
                 WE SHAPE THE PERFECT SOLUTIONS.
               </div>
               <div className="desc pt-10 text-[var(--color-grey-2)] leading-7">
@@ -91,35 +91,35 @@ const LandingPage = () => {
                 service while offering our employees the best training.
               </div>
             </div>
-            <div className="">
+            <div className="flex justify-center">
               <ServiceCardSmall
                 name={"Web Development"}
                 icon={faLaptopCode}
                 counter={"01"}
               />
             </div>
-            <div className="">
+            <div className="flex justify-center">
               <ServiceCardSmall
                 name={"Graphic Designing"}
                 icon={faPenRuler}
                 counter={"02"}
               />
             </div>
-            <div className="">
+            <div className="flex justify-center">
               <ServiceCardSmall
                 name={"Digital Marketing"}
                 icon={faBullhorn}
                 counter={"03"}
               />
             </div>
-            <div className="">
+            <div className="flex justify-center">
               <ServiceCardSmall
                 name={"SEO"}
                 icon={faMagnifyingGlass}
                 counter={"04"}
               />
             </div>
-            <div className="">
+            <div className="flex justify-center">
               <ServiceCardSmall
                 name={"App Development"}
                 icon={faTabletScreenButton}
