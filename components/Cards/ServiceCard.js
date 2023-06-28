@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const ServiceCard = ({ name, desc, icon }) => {
+const ServiceCard = ({ name, desc, icon, url }) => {
   const bottomCurveRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -18,10 +18,11 @@ const ServiceCard = ({ name, desc, icon }) => {
   };
 
   return (
-    <div
+    <Link
       className="service-card relative mb-8 px-4 w-[320px] cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      href={url}
     >
       <div className="inner-box relative block py-12 px-11 rounded-lg bg-[#ffffff] shadow-md">
         <div
@@ -37,18 +38,21 @@ const ServiceCard = ({ name, desc, icon }) => {
           </span>
         </h5>
         <div className="desc relative block text-[#686a6f] pt-7 z-1 leading-7 text-base">
-          Lorem ipsum is are many variations of pass of majority.
+          {desc}
         </div>
         <div className="link-box absolute right-[3px] bottom-[8px] w-[30px] h-[30px] z-10">
           <Link
-            href={"/"}
+            href={url}
             className="relative leading-[30px] text-[20px] text-[var(--secondary-white)]"
           >
-            <FontAwesomeIcon icon={faAngleRight} className="font-thin w-6 h-6" />
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              className="font-thin w-6 h-6"
+            />
           </Link>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

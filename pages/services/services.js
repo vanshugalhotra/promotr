@@ -15,16 +15,19 @@ const Services = () => {
           name={"Graphic Designing"}
           desc={"Lorem ipsum is are many variations of pass of majority."}
           icon={faPenRuler}
+          url={"/services/marketing"}
         />
         <ServiceCard
           name={"Traditional Marketing"}
           desc={"Lorem ipsum is are many variations of pass of majority."}
           icon={faChartLine}
+          url={"/services/marketing"}
         />
         <ServiceCard
           name={"Web Development"}
           desc={"Lorem ipsum is are many variations of pass of majority."}
           icon={faLaptopCode}
+          url={"/services/marketing"}
         />
       </div>
     </section>

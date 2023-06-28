@@ -130,7 +130,7 @@ const Navbar = () => {
         links: [
           {
             name: "Marketing",
-            url: "/marketing",
+            url: "/services/marketing",
           },
           {
             name: "Graphic Designing",
