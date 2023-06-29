@@ -15,6 +15,8 @@ import {
 import { useSelector } from "react-redux";
 import Navbar from "./Navbar/Navbar";
 import ServiceCardSmall from "./Cards/ServiceCardSmall";
+import PrimaryButton from "./Buttons/PrimaryButton";
+import SliderButton from "./Buttons/SliderButton";
 
 const LandingPage = () => {
   const windowWidth = useSelector((state) => state.global.windowWidth);
@@ -68,9 +70,7 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="button-div my-12 md:mx-2">
-              <Link className="btn-primary" href={"/services/services"}>
-                Get Started
-              </Link>
+              <PrimaryButton name={"Get Started"} url={"/services/services"} />
             </div>
           </div>
         </div>
