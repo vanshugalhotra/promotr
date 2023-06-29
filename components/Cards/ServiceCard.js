@@ -19,7 +19,7 @@ const ServiceCard = ({ name, desc, icon, url }) => {
 
   return (
     <Link
-      className="service-card relative mb-8 px-4 w-[320px] cursor-pointer"
+      className="service-card relative mb-8 px-4 w-[250px] xs:w-[320px] cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       href={url}
@@ -41,15 +41,12 @@ const ServiceCard = ({ name, desc, icon, url }) => {
           {desc}
         </div>
         <div className="link-box absolute right-[3px] bottom-[8px] w-[30px] h-[30px] z-10">
-          <Link
-            href={url}
-            className="relative leading-[30px] text-[20px] text-[var(--secondary-white)]"
-          >
+          <div className="relative leading-[30px] text-[20px] text-[var(--secondary-white)]">
             <FontAwesomeIcon
               icon={faAngleRight}
               className="font-thin w-6 h-6"
             />
-          </Link>
+          </div>
         </div>
       </div>
     </Link>

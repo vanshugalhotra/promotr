@@ -12,7 +12,7 @@ const PopUp = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="popup bg-gray-800 bg-opacity-75 w-full h-full flex items-center justify-center">
-        <div className="popup-content bg-white w-[60vw] h-[60vh] flex relative">
+        <div className="popup-content bg-white w-[90vw] lg:w-[60vw] min-h-[60vh] flex relative">
           {/* Cross Icon */}
           <div
             className="cross-icon absolute top-0 right-0 m-4 cursor-pointer"
@@ -22,7 +22,7 @@ const PopUp = () => {
           >
             <FontAwesomeIcon icon={faTimes} className="w-5 h-5" />
           </div>
-          <div className="left w-2/5 relative">
+          <div className="left hidden lg:block w-2/5 relative">
             <Image
               alt=""
               src="/Assets/background/itson.jpg"
@@ -30,8 +30,8 @@ const PopUp = () => {
               objectFit="cover"
             />
           </div>
-          <div className="right flex flex-col px-8 w-3/5">
-            <div className="heading uppercase text-3xl my-4 text-center font-semibold">
+          <div className="right flex flex-col px-8 w-full lg:w-3/5">
+            <div className="heading uppercase text-3xl my-12 lg:my-4 text-center font-semibold">
               Get in Touch !!
             </div>
             <div className="form">

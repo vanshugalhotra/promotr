@@ -1,3 +1,4 @@
+import { faL } from "@fortawesome/free-solid-svg-icons";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -11,8 +12,11 @@ export const navbarSlice = createSlice({
     toggle: (state) => {
       state.isOpen = !state.isOpen;
     },
+    close: (state) => {
+      state.isOpen = false;
+    },
   },
 });
 
-export const { toggle } = navbarSlice.actions;
+export const { toggle, close } = navbarSlice.actions;
 export default navbarSlice.reducer;

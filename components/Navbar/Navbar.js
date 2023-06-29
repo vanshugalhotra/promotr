@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
-import { toggle } from "@/slices/navbarSlice";
+import { toggle, close } from "@/slices/navbarSlice";
 
 // Icons import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,7 +34,10 @@ const NavItemDropDown = ({
   showDropDown,
   name,
   links,
+  url,
 }) => {
+  const router = useRouter();
+
   return (
     <li
       className="nav-item relative"
@@ -42,7 +46,10 @@ const NavItemDropDown = ({
     >
       <button
         className="bottom-line flex items-center justify-center cursor-pointer focus:outline-none"
-        onClick={toggleDropDown}
+        onClick={(event) => {
+          toggleDropDown();
+          router.push(url);
+        }}
       >
         {name}
         <FontAwesomeIcon icon={faCaretDown} className="w-4 h-4 ml-2" />
@@ -125,7 +132,7 @@ const Navbar = () => {
     },
     {
       name: "Services",
-      url: "/",
+      url: "/services/services",
       dropdown: {
         links: [
           {
@@ -192,6 +199,7 @@ const Navbar = () => {
                   <NavItemDropDown
                     key={name}
                     name={name}
+                    url={url}
                     links={dropdown.links}
                     handleMouseEnter={dropdown.handleMouseEnter}
                     handleMouseLeave={dropdown.handleMouseLeave}
@@ -221,17 +229,24 @@ const Navbar = () => {
             if (dropdown) {
               return (
                 <div key={name}>
-                  <button
+                  <Link
                     className="mobile-link flex items-center cursor-pointer focus:outline-none"
                     href={url}
-                    onClick={dropdown.toggleDropDown}
+                    onClick={() => {
+                      dispatch(close());
+                    }}
                   >
                     {name}
                     <FontAwesomeIcon
                       icon={faCaretDown}
                       className="w-4 h-4 ml-2"
+                      onClick={(event) => {
+                        dropdown.toggleDropDown();
+                        event.stopPropagation();
+                        event.preventDefault();
+                      }}
                     />
-                  </button>
+                  </Link>
                   <ul
                     className={`flex flex-col ${
                       dropdown.showDropDown ? "max-h-full mt-0" : "max-h-0 mt-2"
@@ -243,6 +258,9 @@ const Navbar = () => {
                           className="mobile-link px-6"
                           href={url}
                           key={name}
+                          onClick={() => {
+                            dispatch(close());
+                          }}
                         >
                           {name}
                         </Link>
@@ -253,7 +271,14 @@ const Navbar = () => {
               );
             } else {
               return (
-                <Link className="mobile-link" href={url} key={name}>
+                <Link
+                  className="mobile-link"
+                  href={url}
+                  key={name}
+                  onClick={() => {
+                    dispatch(close());
+                  }}
+                >
                   {name}
                 </Link>
               );
