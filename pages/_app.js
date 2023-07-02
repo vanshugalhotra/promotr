@@ -48,12 +48,13 @@ function MyApp({ Component, pageProps }) {
 
   // Check if the current route is the home page ("/")
   const isHomePage = router.pathname === "/";
+  const isContactPage = router.pathname === "/contact";
 
   return (
     <>
       <Provider store={store}>
         <TopLoadingBar />
-        {!isHomePage && <Navbar />}
+        {!isHomePage && !isContactPage && <Navbar />}
         <Component {...pageProps} />
         <Footer />
       </Provider>

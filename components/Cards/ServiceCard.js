@@ -1,12 +1,13 @@
 import React, { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const ServiceCard = ({ name, desc, icon, url }) => {
+const ServiceCard = ({ name, desc, icon, url, image }) => {
   const bottomCurveRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -30,7 +31,8 @@ const ServiceCard = ({ name, desc, icon, url }) => {
           className="bottom-curve absolute -right-[70px] -bottom-[10px] w-[120px] h-[120px] bg-[#ffffff] opacity-10 z-0"
         ></div>
         <div className="icon-box relative block text-[var(--main-yellow)] text-[64px] leading-[1em] mb-5 transition-color duration-500 ease-in-out">
-          <FontAwesomeIcon icon={icon} className="w-12 h-12" />
+          {icon && <FontAwesomeIcon icon={icon} className="w-12 h-12" />}
+          {image && <Image alt="" width={50} height={50} src={image} />}
         </div>
         <h5 className="title h-12 text-[20px] uppercase font-semibold tracking-[1px] leading-[1.1em] mt-2 relative">
           <span className="text-[#222429] transition-color duration-500 ease-in-out cursor-pointer hover:underline">

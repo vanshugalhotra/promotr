@@ -174,7 +174,7 @@ const Navbar = () => {
     <>
       <nav
         id="navbar"
-        className="flex items-center justify-around border-b border-b-[var(--color-grey-1)]"
+        className="flex items-center justify-around border-b-[var(--color-grey-1)] z-[1000]"
       >
         <button
           className="menu-bar md:hidden text-2xl mx-6 z-20"
@@ -182,7 +182,7 @@ const Navbar = () => {
         >
           <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
         </button>
-        <Link className="nav-logo" href={"/"}>
+        <Link className="nav-logo z-[1000]" href={"/"}>
           <Image
             alt="Promotr"
             src={"/Assets/logo/logo_white.png"}

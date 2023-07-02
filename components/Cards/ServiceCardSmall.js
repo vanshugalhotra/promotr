@@ -1,18 +1,23 @@
-import React, { useRef } from "react";
-import Link from "next/link";
+import React, { useRef, useState } from "react";
+import Image from "next/image";
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const ServiceCardSmall = ({ name, icon, counter }) => {
+const ServiceCardSmall = ({ name, icon, counter, image, imageHover }) => {
   const bottomCurveRef = useRef(null);
+
+  // local states
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
     bottomCurveRef.current.style.transform = "skewX(-35deg) scaleX(1)";
+    setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
     bottomCurveRef.current.style.transform = "skewX(0) scaleX(0)";
+    setIsHovered(false);
   };
   return (
     <div
@@ -30,7 +35,18 @@ const ServiceCardSmall = ({ name, icon, counter }) => {
             {counter}
           </div>
           <div className="icon-box relative block text-[var(--color-yellow-1)] text-[64px] leading-[1em] mb-5 transition-color duration-500 ease-in-out">
-            <FontAwesomeIcon icon={icon} className="xs:w-12 xs:h-12 w-8 h-8" />
+            {icon && (
+              <FontAwesomeIcon
+                icon={icon}
+                className="xs:w-12 xs:h-12 w-8 h-8"
+              />
+            )}
+            {image && !isHovered && (
+              <Image alt="" width={50} height={50} src={image} />
+            )}
+            {imageHover && isHovered && (
+              <Image alt="" width={50} height={50} src={imageHover} />
+            )}
           </div>
         </div>
         <h5 className="title h-12 text-[17px] uppercase font-semibold tracking-[1px] leading-[1.1em] mt-2 relative max-w-[30px]">
