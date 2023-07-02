@@ -33,15 +33,11 @@
 
 /* button */
 
-.slider-button:hover .btn-curve {
+.slider-button:hover .button-curve {
   opacity: 1;
   right: 0;
   width: 100%;
   transform: skewX(0deg);
-}
-
-.slider-button:hover .btn-title {
-  color: var(--main-black);
 }
 
 .bottom-line::after {

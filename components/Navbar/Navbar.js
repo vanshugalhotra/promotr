@@ -136,12 +136,16 @@ const Navbar = () => {
       dropdown: {
         links: [
           {
-            name: "Marketing",
-            url: "/services/marketing",
+            name: "Traditional Marketing",
+            url: "/services/traditionalmarketing",
+          },
+          {
+            name: "Digital Marketing",
+            url: "/services/digitalmarketing",
           },
           {
             name: "Graphic Designing",
-            url: "/graphic_designing",
+            url: "/services/graphic_designing",
           },
           {
             name: "Web Development",

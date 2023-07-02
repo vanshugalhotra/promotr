@@ -1,3 +1,4 @@
+import SliderButton from "@/components/Buttons/SliderButton";
 import Navbar from "@/components/Navbar/Navbar";
 import React from "react";
 
@@ -51,11 +52,7 @@ const Contact = () => {
                   placeholder="Type Your Message*"
                   area-invalid="false"
                 ></textarea>
-                <input
-                  type="submit"
-                  value="Send Message"
-                  className="btn-primary send-btn my-8 mx-2"
-                />
+                <SliderButton name={"Submit"} yellow={true} />
               </form>
             </div>
           </div>

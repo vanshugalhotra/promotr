@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import Navbar from "./Navbar/Navbar";
 import ServiceCardSmall from "./Cards/ServiceCardSmall";
 import PrimaryButton from "./Buttons/PrimaryButton";
+import SliderButton from "./Buttons/SliderButton";
 
 const LandingPage = () => {
   const windowWidth = useSelector((state) => state.global.windowWidth);
@@ -59,7 +60,8 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="button-div my-12 md:mx-2">
-              <PrimaryButton name={"Get Started"} url={"/services/services"} />
+              {/* <PrimaryButton name={"Get Started"} url={"/services/services"} /> */}
+              <SliderButton name={"Get Started"} url={"/services/services"} />
             </div>
           </div>
         </div>
@@ -84,6 +86,7 @@ const LandingPage = () => {
               <ServiceCardSmall
                 name={"Web Development"}
                 image={"/Assets/icons/services/Yellow/web_development.png"}
+                imageHover={"/Assets/icons/services/Black/web_development.png"}
                 counter={"01"}
               />
             </div>
@@ -99,6 +102,9 @@ const LandingPage = () => {
               <ServiceCardSmall
                 name={"Digital Marketing"}
                 image={"/Assets/icons/services/Yellow/digital_marketing.png"}
+                imageHover={
+                  "/Assets/icons/services/Black/digital_marketing.png"
+                }
                 counter={"03"}
               />
             </div>
@@ -107,6 +113,9 @@ const LandingPage = () => {
                 name={"Traditional Marketing"}
                 image={
                   "/Assets/icons/services/Yellow/traditional_marketing.png"
+                }
+                imageHover={
+                  "/Assets/icons/services/Black/traditional_marketing.png"
                 }
                 counter={"04"}
               />
