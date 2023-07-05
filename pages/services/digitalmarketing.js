@@ -21,7 +21,7 @@ const Marketing = () => {
       desc: "Marketing Options",
     },
     {
-      image: "/Assets/icons/services/Yellow/Digital/digital_marketing.png",
+      image: "/Assets/icons/services/Yellow/Digital/influencer.png",
       name: "Influencer Marketing",
       count: 499,
       desc: "Marketing Options",

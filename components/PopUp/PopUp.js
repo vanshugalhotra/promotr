@@ -6,6 +6,8 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
+import SliderButton from "../Buttons/SliderButton";
+
 const PopUp = () => {
   const dispatch = useDispatch();
 
@@ -58,11 +60,7 @@ const PopUp = () => {
                 placeholder="Type Your Message*"
                 area-invalid="false"
               ></textarea>
-              <input
-                type="submit"
-                value="Submit"
-                className="btn-primary send-btn my-8 mx-2 !py-2"
-              />
+              <SliderButton name={"Submit"} yellow={true} small={true}/>
             </div>
           </div>
         </div>

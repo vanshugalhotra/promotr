@@ -88,6 +88,7 @@ const LandingPage = () => {
                 image={"/Assets/icons/services/Yellow/web_development.png"}
                 imageHover={"/Assets/icons/services/Black/web_development.png"}
                 counter={"01"}
+                url={"/services/web_development"}
               />
             </div>
             <div className="flex justify-center">
@@ -96,6 +97,7 @@ const LandingPage = () => {
                 image={"/Assets/icons/services/Yellow/graphic_design.png"}
                 imageHover={"/Assets/icons/services/Black/graphic_design.png"}
                 counter={"02"}
+                url={"/services/graphic_designing"}
               />
             </div>
             <div className="flex justify-center">
@@ -106,6 +108,7 @@ const LandingPage = () => {
                   "/Assets/icons/services/Black/digital_marketing.png"
                 }
                 counter={"03"}
+                url={"/services/traditionalmarketing"}
               />
             </div>
             <div className="flex justify-center">
@@ -118,6 +121,7 @@ const LandingPage = () => {
                   "/Assets/icons/services/Black/traditional_marketing.png"
                 }
                 counter={"04"}
+                url={"/services/digitalmarketing"}
               />
             </div>
             <div className="services-title-box col-span-1 xl:col-span-2 px-12 py-6">

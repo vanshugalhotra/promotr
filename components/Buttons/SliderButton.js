@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const SliderButton = ({ name, url, yellow }) => {
+const SliderButton = ({ name, url, yellow, small }) => {
   return (
     <div className="pt-10">
       <Link
@@ -23,7 +23,11 @@ const SliderButton = ({ name, url, yellow }) => {
               : " bg-[var(--secondary-white)] "
           }opacity-20 z-0 -skew-x-[22deg] transition-all duration-500 ease-in-out`}
         ></div>
-        <span className="btn-title relative block text-sm leading-8 font-normal tracking-widest pt-[19px] pb-[16px] px-[50px] z-10">
+        <span
+          className={`btn-title relative block text-sm leading-8 font-normal tracking-widest ${
+            small ? "pt-[13px] pb-[14px]" : "pt-[19px] pb-[16px]"
+          } px-[50px] z-10`}
+        >
           {name}
         </span>
       </Link>

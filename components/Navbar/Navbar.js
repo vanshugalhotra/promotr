@@ -149,7 +149,7 @@ const Navbar = () => {
           },
           {
             name: "Web Development",
-            url: "/webdevelopment",
+            url: "/services/web_development",
           },
         ],
         toggleDropDown: toggleServicesDropDown,
