@@ -174,34 +174,12 @@
   }
 
   /* footer */
-
-  .footer-info-item {
-    @apply p-0 md:px-[70px];
+  .social-link {
+    @apply relative flex items-center justify-center cursor-pointer text-[var(--color-grey-2)] bg-[var(--color-black-1)] text-[18px] w-[48px] h-[48px] leading-[44px] text-center rounded-full transition-all duration-300 ease-in-out hover:bg-[var(--color-yellow-1)] hover:text-[var(--secondary-black)] font-semibold;
   }
 
-  .footer-info-title {
-    @apply text-[18px] text-[var(--main-white)] font-normal;
-  }
-  .footer-info-desc {
-    @apply text-[12px] uppercase font-medium tracking-wider text-gray-200;
-  }
-  .footer-info-text {
-    @apply py-[8px] px-[2px] text-[15px] font-medium tracking-wider text-gray-200 transition-all duration-200 ease-in-out cursor-pointer;
-  }
-
-  .footer-info-links {
-    @apply mt-[20px] inline-flex justify-center items-center;
-  }
-
-  .footer-link {
-    @apply w-[35px] h-[35px] rounded-full border border-white flex items-center justify-center transition-all duration-500 ease-in-out cursor-pointer mr-[15px] hover:border-black hover:bg-[var(--main-white)];
-  }
-  .footer-link:hover > svg {
-    @apply invert-0;
-  }
-
-  .footer-link svg {
-    @apply w-[18px] h-[18px] invert;
+  .explore-item {
+    @apply capitalize tracking-tight leading-snug transition-all duration-100 ease-linear hover:text-[var(--main-white)] my-2 border-b border-transparent hover:border-b hover:border-b-[var(--color-yellow-1)] inline-block max-w-fit;
   }
 
   /* contact */

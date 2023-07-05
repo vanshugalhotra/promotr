@@ -136,6 +136,10 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+
+
+      <div className="h-[20vh]"></div>
+
     </>
   );
 };
