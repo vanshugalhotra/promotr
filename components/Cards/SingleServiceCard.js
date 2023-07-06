@@ -14,7 +14,7 @@ const SingleServiceCard = ({ image, name, count, desc }) => {
 
   return (
     <div
-        className="bg-[var(--secondary-white)] border border-gray-200 border-opacity-60 shadow cursor-pointer transition-all duration-300 ease-in flex flex-col items-center justify-center p-5 rounded-md hover:scale-105  sm:w-[230px] sm:h-[230px] w-[300px] h-[230px]"
+        className="bg-[var(--secondary-white)] border border-gray-200 border-opacity-60 shadow cursor-pointer transition-all duration-300 ease-in flex flex-col items-center justify-center p-5 rounded-md hover:scale-105  sm:w-[230px] sm:h-[230px] w-[230px] h-[210px]"
       onClick={handleClick}
     >
       <div className="icon mb-2">

@@ -7,13 +7,13 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-[var(--secondary-black)] bg-[url('/Assets/others/footer-bg.png')] h-[70vh] flex justify-center text-[var(--color-grey-2)] gap-5">
-      <div className="px-28 py-20 grid grid-cols-4">
-        <div className="grid-item inline-block px-4 mx-4">
+    <footer className="py-11 footer bg-[var(--secondary-black)] bg-[url('/Assets/others/footer-bg.png')] flex justify-center text-[var(--color-grey-2)] gap-5">
+      <div className="px-4 xs:px-16 py-3 xl:px-28 xl:py-20 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid-item  mx-4">
           <div className="image mb-2">
             <Image
               alt="Promotr"
-              src={"/Assets/logo/logo_white.png"}
+              src={"/Assets/logo/promotr.png"}
               width={200}
               height={200}
               className="invert"
@@ -49,7 +49,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="grid-item px-4 inline-block">
+        <div className="grid-item">
           <div
             className="title uppercase text-[var(--secondary-white)] text-xl leading-8 tracking-wide mb-2 font-semibold py-8 px-4
           "
@@ -96,7 +96,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="grid-item px-4 inline-block">
+        <div className="grid-item">
           <div
             className="title uppercase text-[var(--secondary-white)] text-xl leading-8 tracking-wide mb-2 font-semibold py-8 px-4
           "
@@ -115,7 +115,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="grid-item px-4 inline-block">
+        <div className="grid-item">
           <div
             className="title uppercase text-[var(--secondary-white)] text-xl leading-8 tracking-wide mb-2 font-semibold py-8 px-4
           "

@@ -4,8 +4,7 @@ import ServiceCard from "@/components/Cards/ServiceCard";
 const Services = () => {
   return (
     <section className="">
-<div className="h-[60vh] max-h-full max-w-full bg-[url('/Assets/Background/services.jpg')] bg-contain bg-no-repeat w-full"></div>
-
+      <div className="h-[450px] max-h-full max-w-full bg-[url('/Assets/Background/services2.jpg')] bg-contain bg-no-repeat w-full"></div>
 
       <div className="flex justify-center items-center my-10">
         <div className="services-cards py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
