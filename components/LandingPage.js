@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import Navbar from "./Navbar/Navbar";
 import ServiceCardSmall from "./Cards/ServiceCardSmall";
-import PrimaryButton from "./Buttons/PrimaryButton";
 import SliderButton from "./Buttons/SliderButton";
 
 const LandingPage = () => {
@@ -21,7 +20,7 @@ const LandingPage = () => {
     <>
       {/* main content */}
       <div className="relative w-full min-h-screen">
-        <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/background/bg.jpeg')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-90"></div>
+        <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/background/bg3.jpg')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-90"></div>
         <Navbar />
         <div className="content relative h-[90vh] flex items-center justify-center">
           <div className="content-text-button relative p-2 md:px-8  md:max-w-[1238px] z-10 inline-flex flex-col items-center justify-center">
@@ -61,14 +60,14 @@ const LandingPage = () => {
             </div>
             <div className="button-div my-12 md:mx-2">
               {/* <PrimaryButton name={"Get Started"} url={"/services/services"} /> */}
-              <SliderButton name={"Get Started"} url={"/services/services"} />
+              <SliderButton name={"Get Started"} url={"/services/services"} yellow={false} />
             </div>
           </div>
         </div>
       </div>
 
       {/* services content */}
-      <div className="bg-[var(--secondary-black)] relative w-full">
+      <div className="bg-[var(--secondary-black)] relative w-full mb-16">
         <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/others/shape.png')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[0.02] before:-z-0 before:invert"></div>
         {/* Your content here */}
         <div className="services-content py-12 md:py-20 lg:py-28 flex justify-center items-center ">
@@ -137,9 +136,25 @@ const LandingPage = () => {
         </div>
       </div>
 
-
-      <div className="h-[20vh]"></div>
-
+      <div className="relative p-0 z-[1] contact-with-us-card">
+        <div className="container static max-w-[1200px] px-4 mx-auto">
+          <div className="inner relative block pt-[70px] pb-[60px] px-[20px] md:pt-[95px] md:px-[95px] md:pb-[68px] bg-[var(--color-yellow-1)] text-[var(--secondary-black)] rounded-lg overflow-hidden -bottom-[60px] -mt-[60px]">
+            <div className="shape-1 absolute right-0 top-0 w-[340px] max-w-full h-full bg-[url('/Assets/others/call-to-shape-1.png')] bg-right-top bg-no-repeat z-[1]"></div>
+            <div className="shape-2 absolute right-[170px] top-0 w-[410px] h-[54px] bg-[url('/Assets/others/call-to-shape-2.png')] z-0 bg-right-top bg-no-repeat"></div>
+            <h2 className="relative text-center md:text-start md:float-left block text-[26px] md:text-[45px] leading-[1.05em] uppercase text-[var(--secondary-black)] font-semibold mb-[10px] md:mb-[25px] z-[3]">
+              Let&apos;s Get your project <br />
+              Started!
+            </h2>
+            <div className="link-box relative text-center md:float-right z-[3]">
+              <SliderButton
+                name={"Contact with us"}
+                url={"/contact"}
+                small={windowWidth < 768}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

@@ -3,11 +3,10 @@ import ServiceCard from "@/components/Cards/ServiceCard";
 
 const Services = () => {
   return (
-    <section className="">
-      <div className="h-[450px] max-h-full max-w-full bg-[url('/Assets/Background/services2.jpg')] bg-contain bg-no-repeat w-full"></div>
-
+    <div className="relative w-full min-h-[450px]">
+      <div className="h-[450px] w-full bg-[url('/Assets/background/services2.jpg')] bg-center bg-no-repeat bg-cover opacity-100"></div>
       <div className="flex justify-center items-center my-10">
-        <div className="services-cards py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className="services-cards py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <ServiceCard
             name={"Traditional Marketing"}
             desc={"Lorem ipsum is are many variations of pass of majority."}
@@ -34,7 +33,7 @@ const Services = () => {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
