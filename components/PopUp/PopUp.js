@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { closePopup } from "@/slices/servicesSlice";
-import Image from "next/image";
+import ReactPlayer from "react-player/lazy";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -25,11 +25,13 @@ const PopUp = () => {
             <FontAwesomeIcon icon={faTimes} className="w-5 h-5" />
           </div>
           <div className="left hidden lg:block w-2/5 relative">
-            <Image
-              alt=""
-              src="/Assets/background/itson.jpg"
-              layout="fill"
-              objectFit="cover"
+            <ReactPlayer
+              url="/Assets/Videos/popup.mp4"
+              width="100%"
+              height="100%"
+              muted={false}
+              playing={true}
+              pip={true}
             />
           </div>
           <div className="right flex flex-col px-8 w-full lg:w-3/5">
@@ -60,7 +62,7 @@ const PopUp = () => {
                 placeholder="Type Your Message*"
                 area-invalid="false"
               ></textarea>
-              <SliderButton name={"Submit"} yellow={true} small={true}/>
+              <SliderButton name={"Submit"} yellow={true} small={true} />
             </div>
           </div>
         </div>

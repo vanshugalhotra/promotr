@@ -19,7 +19,8 @@ module.exports = {
         xs: "380px",
       },
       fontFamily: {
-        sans: ["DM Sans", ...defaultTheme.fontFamily.sans],
+        sans: ["Teko", ...defaultTheme.fontFamily.sans],
+        // sans: ["DM Sans", "Teko", ...defaultTheme.fontFamily.sans],
         // sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
     },

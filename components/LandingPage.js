@@ -73,7 +73,7 @@ const LandingPage = () => {
         <div className="services-content py-12 md:py-20 lg:py-28 flex justify-center items-center ">
           <div className="content grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:max-w-[1200px] mx-auto gap-5 items-center justify-center">
             <div className="services-title-box col-span-1 xl:col-span-2 px-12 py-6">
-              <div className="title text-[30px] md:text-[40px] lg:text-[46px] leading-tight font-medium tracking-wide text-[var(--secondary-white)] uppercase">
+              <div className="title text-[30px] md:text-[40px] lg:text-[46px] leading-tight font-medium tracking-wide text-[var(--secondary-white)] uppercase font-sans">
                 WE SHAPE THE PERFECT SOLUTIONS.
               </div>
               <div className="desc pt-10 text-[var(--color-grey-2)] leading-7">
