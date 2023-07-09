@@ -1,10 +1,7 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 
 // component imports
 import LandingPage from "@/components/LandingPage";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (

@@ -6,6 +6,11 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import TopLoadingBar from "@/components/LoadingBar/TopLoadingBar";
 
+// fonts
+import { DM_Sans } from "next/font/google";
+
+const DM_SANS = DM_Sans({ subsets: ["latin"], weight: ["400"] });
+
 //css imports
 import "@/styles/globals.css";
 
@@ -51,14 +56,14 @@ function MyApp({ Component, pageProps }) {
   const isContactPage = router.pathname === "/contact";
 
   return (
-    <>
+    <main className={DM_SANS.className}>
       <Provider store={store}>
         <TopLoadingBar />
         {!isHomePage && !isContactPage && <Navbar />}
         <Component {...pageProps} />
         <Footer />
       </Provider>
-    </>
+    </main>
   );
 }
 

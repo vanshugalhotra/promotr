@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Teko&display=swap");
 /* CSS Reset */
 * {
   margin: 0;
@@ -47,10 +46,6 @@
   width: 0%;
   border-bottom: 2px solid var(--main-black);
   transition: 0.5s;
-}
-
-.services-title-box .title {
-  font-family: "Anton", sans-serif;
 }
 
 .bottom-line:hover::after {

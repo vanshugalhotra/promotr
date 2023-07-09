@@ -18,11 +18,6 @@ module.exports = {
       screens: {
         xs: "380px",
       },
-      fontFamily: {
-        sans: ["Teko", ...defaultTheme.fontFamily.sans],
-        // sans: ["DM Sans", "Teko", ...defaultTheme.fontFamily.sans],
-        // sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
-      },
     },
   },
   plugins: [],

@@ -1,5 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import { Teko, Rubik } from "next/font/google";
+
+const Teko_Font = Teko({ subsets: ["latin"], weight: ["400", "600"] });
+const Rubik_Font = Rubik({ subsets: ["latin"], weight: ["400"] });
 
 // Redux
 import { useSelector } from "react-redux";
@@ -36,7 +40,7 @@ const LandingPage = () => {
 
               <div className="relative">
                 <div className="absolute  top-[19%] left-[22%] xs:left-[15%] lg:top-[24%] lg:left-[15%] transform -translate-x-1/2 -translate-y-1/2 w-24 h-12 xs:w-32 xs:h-16 md:w-56 md:h-28 rounded-full z-0 bg-[#E9D175] opacity-80"></div>
-                <div className="relative z-10">
+                <div className={`relative z-10`}>
                   <div className="text-4xl xs:text-5xl md:text-8xl text-[var(--main-black)] font-semibold text-center md:leading-[7.5rem] leading-normal  tracking-wide">
                     <span className="relative">
                       Your
@@ -60,7 +64,11 @@ const LandingPage = () => {
             </div>
             <div className="button-div my-12 md:mx-2">
               {/* <PrimaryButton name={"Get Started"} url={"/services/services"} /> */}
-              <SliderButton name={"Get Started"} url={"/services/services"} yellow={false} />
+              <SliderButton
+                name={"Get Started"}
+                url={"/services/services"}
+                yellow={false}
+              />
             </div>
           </div>
         </div>
@@ -72,11 +80,20 @@ const LandingPage = () => {
         {/* Your content here */}
         <div className="services-content py-12 md:py-20 lg:py-28 flex justify-center items-center ">
           <div className="content grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:max-w-[1200px] mx-auto gap-5 items-center justify-center">
-            <div className="services-title-box col-span-1 xl:col-span-2 px-12 py-6">
-              <div className="title text-[30px] md:text-[40px] lg:text-[46px] leading-tight font-medium tracking-wide text-[var(--secondary-white)] uppercase font-sans">
-                WE SHAPE THE PERFECT SOLUTIONS.
+            <div
+              className={`services-title-box col-span-1 xl:col-span-2 px-12 py-6`}
+            >
+              <div className={Teko_Font.className}>
+                <div
+                  className={`title text-[50px] md:text-[60px] lg:text-[70px] leading-[0.9em] font-medium tracking-wide text-[var(--secondary-white)] uppercase`}
+                >
+                  WE SHAPE THE PERFECT SOLUTIONS{" "}
+                  <span className="text-[var(--color-yellow-1)]">.</span>
+                </div>
               </div>
-              <div className="desc pt-10 text-[var(--color-grey-2)] leading-7">
+              <div
+                className={`desc pt-10 text-[var(--color-grey-2)] leading-7 ${Rubik_Font.className}`}
+              >
                 We are committed to providing our customers with exceptional
                 service while offering our employees the best training.
               </div>
@@ -124,10 +141,17 @@ const LandingPage = () => {
               />
             </div>
             <div className="services-title-box col-span-1 xl:col-span-2 px-12 py-6">
-              <div className="title text-[30px] md:text-[40px] lg:text-[46px] leading-tight font-medium tracking-wide text-[var(--secondary-white)] uppercase">
-                WE SHAPE THE PERFECT SOLUTIONS.
+              <div className={Teko_Font.className}>
+                <div
+                  className={`title text-[50px] md:text-[60px] lg:text-[70px] leading-[0.9em] font-medium tracking-wide text-[var(--secondary-white)] uppercase`}
+                >
+                  WE SHAPE THE PERFECT SOLUTIONS{" "}
+                  <span className="text-[var(--color-yellow-1)]">.</span>
+                </div>
               </div>
-              <div className="desc pt-10 text-[var(--color-grey-2)] leading-7">
+              <div
+                className={`desc pt-10 text-[var(--color-grey-2)] leading-7 ${Rubik_Font.className}`}
+              >
                 We are committed to providing our customers with exceptional
                 service while offering our employees the best training.
               </div>
@@ -136,12 +160,14 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="relative p-0 z-[1] contact-with-us-card">
+      <div
+        className={`relative p-0 z-[1] contact-with-us-card ${Teko_Font.className}`}
+      >
         <div className="container static max-w-[1200px] px-4 mx-auto">
           <div className="inner relative block pt-[70px] pb-[60px] px-[20px] md:pt-[95px] md:px-[95px] md:pb-[68px] bg-[var(--color-yellow-1)] text-[var(--secondary-black)] rounded-lg overflow-hidden -bottom-[60px] -mt-[60px]">
             <div className="shape-1 absolute right-0 top-0 w-[340px] max-w-full h-full bg-[url('/Assets/others/call-to-shape-1.png')] bg-right-top bg-no-repeat z-[1]"></div>
             <div className="shape-2 absolute right-[170px] top-0 w-[410px] h-[54px] bg-[url('/Assets/others/call-to-shape-2.png')] z-0 bg-right-top bg-no-repeat"></div>
-            <h2 className="relative text-center md:text-start md:float-left block text-[26px] md:text-[45px] leading-[1.05em] uppercase text-[var(--secondary-black)] font-semibold mb-[10px] md:mb-[25px] z-[3]">
+            <h2 className="relative text-center md:text-start md:float-left block text-[45px] md:text-[60px] leading-[0.85em] uppercase text-[var(--secondary-black)] font-medium mb-[10px] md:mb-[25px] z-[3]">
               Let&apos;s Get your project <br />
               Started!
             </h2>
