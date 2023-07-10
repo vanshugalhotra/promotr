@@ -4,6 +4,11 @@ import SingleServiceCard from "@/components/Cards/SingleServiceCard";
 import { useSelector } from "react-redux";
 import PopUp from "@/components/PopUp/PopUp";
 
+import dynamic from "next/dynamic";
+
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
+// import ReactPlayer from "react-player/lazy";
+
 const Marketing = () => {
   const showPopup = useSelector((state) => state.services.showPopup);
 
@@ -72,7 +77,16 @@ const Marketing = () => {
 
   return (
     <section>
-      <div className="h-[50vh] bg-purple-100"></div>
+      <div className="h-[450px] bg-[var(--main-black)] w-full bg-center bg-no-repeat bg-cover opacity-100">
+        <ReactPlayer
+          url="/Assets/Videos/traditional.mp4"
+          width="100%"
+          height="100%"
+          muted={true}
+          playing={true}
+          pip={true}
+        />
+      </div>
       <div className="service-cards flex justify-center  my-28">
         <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
           {cardsData.map((eachCard, index) => {

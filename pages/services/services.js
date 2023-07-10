@@ -11,25 +11,25 @@ const Services = () => {
             name={"Traditional Marketing"}
             desc={"Lorem ipsum is are many variations of pass of majority."}
             image={"/Assets/icons/services/Yellow/traditional_marketing.png"}
-            url={"/services/marketing"}
+            url={"/services/traditionalmarketing"}
           />
           <ServiceCard
             name={"Digital Marketing"}
             desc={"Lorem ipsum is are many variations of pass of majority."}
             image={"/Assets/icons/services/Yellow/digital_marketing.png"}
-            url={"/services/marketing"}
+            url={"/services/digitalmarketing"}
           />
           <ServiceCard
             name={"Graphic Designing"}
             desc={"Lorem ipsum is are many variations of pass of majority."}
             image={"/Assets/icons/services/Yellow/graphic_design.png"}
-            url={"/services/marketing"}
+            url={"/services/graphic_designing"}
           />
           <ServiceCard
             name={"Web Development"}
             desc={"Lorem ipsum is are many variations of pass of majority."}
             image={"/Assets/icons/services/Yellow/web_development.png"}
-            url={"/services/marketing"}
+            url={"/services/web_development"}
           />
         </div>
       </div>
