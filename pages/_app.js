@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import TopLoadingBar from "@/components/LoadingBar/TopLoadingBar";
+import LoadingBar from "@/components/LoadingBar/LoadingBar";
 
 // fonts
 import { DM_Sans } from "next/font/google";
@@ -33,24 +34,6 @@ function MyApp({ Component, pageProps }) {
   }, []);
   const router = useRouter();
 
-  useEffect(() => {
-    const handleRouteChangeStart = () => {
-      store.dispatch(setProgress(40));
-    };
-
-    const handleRouteChangeComplete = () => {
-      store.dispatch(setProgress(100));
-    };
-
-    router.events.on("routeChangeStart", handleRouteChangeStart);
-    router.events.on("routeChangeComplete", handleRouteChangeComplete);
-
-    return () => {
-      router.events.off("routeChangeStart", handleRouteChangeStart);
-      router.events.off("routeChangeComplete", handleRouteChangeComplete);
-    };
-  }, [router]);
-
   // Check if the current route is the home page ("/")
   const isHomePage = router.pathname === "/";
   const isContactPage = router.pathname === "/contact";
@@ -59,6 +42,7 @@ function MyApp({ Component, pageProps }) {
     <main className={DM_SANS.className}>
       <Provider store={store}>
         <TopLoadingBar />
+        <LoadingBar />
         {!isHomePage && !isContactPage && <Navbar />}
         <Component {...pageProps} />
         <Footer />
