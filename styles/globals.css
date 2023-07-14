@@ -173,6 +173,24 @@
   color: var(--color-black-1);
 }
 
+.single-service-card {
+  transform-style: preserve-3d;
+  transition: all 0.6s ease;
+}
+
+.single-service-card .front,
+.back {
+  backface-visibility: hidden;
+}
+
+.single-service-card-container:hover .single-service-card {
+  transform: rotateY(180deg);
+}
+
+.single-service-card .back {
+  transform: rotateY(180deg);
+}
+
 @layer components {
   /* navbar */
 
@@ -223,4 +241,9 @@
   }
 
   /* services */
+
+  .front,
+  .back {
+    @apply rounded-md sm:w-[230px] sm:h-[230px] w-[230px] h-[210px];
+  }
 }

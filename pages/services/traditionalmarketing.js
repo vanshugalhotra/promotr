@@ -1,5 +1,6 @@
 import React from "react";
 import SingleServiceCard from "@/components/Cards/SingleServiceCard";
+import SingleServiceCardFlip from "@/components/Cards/SingleServiceCardFlip";
 
 import { useSelector } from "react-redux";
 import PopUp from "@/components/PopUp/PopUp";
@@ -90,6 +91,13 @@ const Marketing = () => {
       <div className="service-cards flex justify-center  my-28">
         <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
           {cardsData.map((eachCard, index) => {
+            if (eachCard.backImage) {
+              return (
+                <div key={index}>
+                  <SingleServiceCardFlip {...eachCard} />
+                </div>
+              );
+            }
             return (
               <div key={index}>
                 <SingleServiceCard {...eachCard} />
