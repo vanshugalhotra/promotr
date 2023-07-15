@@ -177,7 +177,7 @@ const LandingPage = () => {
             <div className="link-box relative text-center md:float-right z-[3]">
               <SliderButton
                 name={"Contact with us"}
-                url={"/contact"}
+                url={"/contact#contactus"}
                 small={windowWidth < 768}
               />
             </div>

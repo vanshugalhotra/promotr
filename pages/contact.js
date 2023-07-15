@@ -23,7 +23,10 @@ const Contact = () => {
     <div className={`relative min-h-screen ${Manrope_Font.className}`}>
       <Navbar />
       <div className="backgroud h-[50vh] bg-yellow-200"></div>
-      <div className="contact-section py-16 bg-[url('/Assets/others/map.png')] relative bg-center">
+      <div
+        className="contact-section py-16 bg-[url('/Assets/others/map.png')] relative bg-center"
+        id="contactus"
+      >
         <div className="shape-right-bottom absolute right-0 bottom-0 max-w-[45%] z-0">
           <Image
             alt=""
@@ -33,14 +36,14 @@ const Contact = () => {
             height={536}
           />
         </div>
-        <div className="contact-container flex justify-center items-center">
-          <div className="contact-left w-[45%] flex-grow-0 flex-shrink-0 basis-auto p-2">
-            <div className="contact-form p-20 shadow-lg bg-white relative z-[1]">
+        <div className="contact-container flex justify-center items-center flex-col lg:flex-row">
+          <div className="contact-left  w-full lg:w-[45%] flex-grow-0 flex-shrink-0 basis-auto py-1 px-0 xs:p-2">
+            <div className="contact-form p-10 lg:p-20 shadow-sm lg:shadow-lg bg-white relative z-[1]">
               <h3 className="sub-title uppercase mb-3 text-xl text-[var(--main-black)] font-extrabold inline-block relative tracking-wider">
-                Shoot us a message
+                Got a problem?
               </h3>
               <h1 className="title text-4xl leading-[1.3] font-extrabold">
-                We won&apos;t leave it on seen
+                we have a solution.
               </h1>
               <div className="form mt-12">
                 <div className="form-control-box flex flex-wrap">
@@ -78,8 +81,8 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="contact-right w-1/3 ml-20 flex items-center justify-center flex-grow-0 flex-shrink-0 basis-auto z-50">
-            <div className="contact-info">
+          <div className="contact-right w-full lg:w-1/3 m-6 lg:ml-20 flex items-center justify-center flex-grow-0 flex-shrink-0 basis-auto z-50">
+            <div className="contact-info px-8 lg:p-0">
               <div className="title mb-10">
                 <span className="font-extrabold text-4xl tracking-wide capitalize mb-6 inline-block">
                   Contact Information
@@ -89,7 +92,7 @@ const Contact = () => {
                   limits hearts. Resolve parties.
                 </p>
               </div>
-              <div className="contact-address grid grid-cols-2 gap-8">
+              <div className="contact-address grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="contact-address-item">
                   <h3 className="title font-extrabold text-lg leading-[1.3]">
                     Phone
@@ -150,6 +153,15 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="map-section w-full mt-8">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3237.32578397747!2d76.7665321013762!3d30.72326344806705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1689451230242!5m2!1sen!2sin"
+          className="w-[98vw] h-[500px]"
+          allowfullscreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   );
