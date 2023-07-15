@@ -24,7 +24,7 @@ const LandingPage = () => {
     <>
       {/* main content */}
       <div className="relative w-full min-h-screen">
-        <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/background/back.jpg')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-90"></div>
+        <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/background/bg3.jpg')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-100"></div>
         <Navbar />
         <div className="content relative h-[90vh] flex items-center justify-center">
           <div className="content-text-button relative p-2 md:px-8  md:max-w-[1238px] z-10 inline-flex flex-col items-center justify-center">
@@ -50,7 +50,9 @@ const LandingPage = () => {
                       </span>{" "}
                       Biggest Cheerleaders
                     </span>
-                    <h6 className="text-base capitalize tracking-wider">Co-powered by AI</h6>
+                    <h6 className="text-xl capitalize tracking-wider relative top-6 underline">
+                      Co-powered by AI
+                    </h6>
                   </div>
                 </div>
                 <div className="star absolute right-2 bottom-8">
@@ -86,17 +88,17 @@ const LandingPage = () => {
             >
               <div className={Teko_Font.className}>
                 <div
-                  className={`title text-[50px] md:text-[60px] lg:text-[70px] leading-[0.9em] font-medium tracking-wide text-[var(--secondary-white)] uppercase`}
+                  className={`title text-[50px] md:text-[60px] lg:text-[66px] leading-[0.9em] font-medium tracking-wide text-[var(--secondary-white)] uppercase`}
                 >
-                  WE SHAPE THE PERFECT SOLUTIONS{" "}
+                  Gateway To Unlimited Possibilities
                   <span className="text-[var(--color-yellow-1)]">.</span>
                 </div>
               </div>
               <div
                 className={`desc pt-10 text-[var(--color-grey-2)] leading-7 ${Rubik_Font.className}`}
               >
-                We are committed to providing our customers with exceptional
-                service while offering our employees the best training.
+                Surround yourself with a community of like-minded creatives and
+                let collaboration inspire you.
               </div>
             </div>
             <div className="flex justify-center">
@@ -146,15 +148,15 @@ const LandingPage = () => {
                 <div
                   className={`title text-[50px] md:text-[60px] lg:text-[70px] leading-[0.9em] font-medium tracking-wide text-[var(--secondary-white)] uppercase`}
                 >
-                  WE SHAPE THE PERFECT SOLUTIONS{" "}
+                  From Strategy to Execution
                   <span className="text-[var(--color-yellow-1)]">.</span>
                 </div>
               </div>
               <div
                 className={`desc pt-10 text-[var(--color-grey-2)] leading-7 ${Rubik_Font.className}`}
               >
-                We are committed to providing our customers with exceptional
-                service while offering our employees the best training.
+                Leverage Online Channels to Reach, Engage, and Convert Your
+                Target Audience!
               </div>
             </div>
           </div>

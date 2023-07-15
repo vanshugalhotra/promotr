@@ -92,7 +92,7 @@ const Marketing = () => {
       backImage: "/Assets/test.jpg",
     },
     {
-      image: "/Assets/icons/services/Yellow/Graphic/brand_stationary.png",
+      image: "/Assets/icons/services/Yellow/Graphic/videos.png",
       name: "Videos",
       count: 499,
       desc: "Marketing Options",

@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="py-11 footer bg-[var(--secondary-black)] bg-[url('/Assets/others/footer-bg.png')] flex justify-center text-[var(--color-grey-2)] gap-5">
       <div className="px-4 xs:px-16 py-3 xl:px-28 xl:py-20 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
         <div className="grid-item  mx-4">
-          <div className="image mb-2">
+          <div className="image">
             <Image
               alt="Promotr"
               src={"/Assets/logo/promotr.png"}
@@ -20,8 +20,9 @@ const Footer = () => {
             />
           </div>
           <div className="desc mb-8 leading-8 font-normal tracking-wide">
-            Welcome to our web design agency. Lorem ipsum simply free text dolor
-            sited amet cons cing elit.
+            A dynamic and innovative marketing agency that specializes in
+            developing creative and effective campaigns for
+            businesses of all sizes
           </div>
           <div className="social-links flex space-x-5">
             <Link
