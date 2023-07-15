@@ -24,7 +24,7 @@ const LandingPage = () => {
     <>
       {/* main content */}
       <div className="relative w-full min-h-screen">
-        <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/background/bg3.jpg')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-90"></div>
+        <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/background/back.jpg')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-90"></div>
         <Navbar />
         <div className="content relative h-[90vh] flex items-center justify-center">
           <div className="content-text-button relative p-2 md:px-8  md:max-w-[1238px] z-10 inline-flex flex-col items-center justify-center">
@@ -50,6 +50,7 @@ const LandingPage = () => {
                       </span>{" "}
                       Biggest Cheerleaders
                     </span>
+                    <h6 className="text-base capitalize tracking-wider">Co-powered by AI</h6>
                   </div>
                 </div>
                 <div className="star absolute right-2 bottom-8">
