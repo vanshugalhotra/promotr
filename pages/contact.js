@@ -1,59 +1,152 @@
-import SliderButton from "@/components/Buttons/SliderButton";
 import Navbar from "@/components/Navbar/Navbar";
+import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+
+import {
+  FaTelegramPlane,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
+
+import { Manrope } from "next/font/google";
+import SecondaryButton from "@/components/Buttons/SecondaryButton";
+
+const Manrope_Font = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "800"],
+});
 
 const Contact = () => {
   return (
-    <div className="relative min-h-screen">
-      {/* <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/background/bg3.jpg')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-90"></div> */}
+    <div className={`relative min-h-screen ${Manrope_Font.className}`}>
       <Navbar />
-      <div
-        className="contact-info m-0 mt-5 flex-col lg:flex-row lg:my-5 lg:mx-36 border-2 border-gray-200 border-opacity-60 shadow-sm flex items-center justify-center z-[100]"
-        id="getstarted"
-      >
-        <div className="contact-left z-40">
-          <div className="contact-details pt-7 pb-10">
-            <div className="contact-title text-4xl text-[var(--main-white)] capitalize tracking-wide text-center font-semibold px-4">
-              Drop Your Information We&apos;ll Contact You
-            </div>
-            <div className="contact-desc text-lg py-10 px-7 lg:px-12 text-[var(--main-white)] font-medium leading-8 text-center !max-w-full">
-              Experience personalized care, let&apos;s connect and make things
-              happen!
+      <div className="backgroud h-[50vh] bg-yellow-200"></div>
+      <div className="contact-section py-16 bg-[url('/Assets/others/map.png')] relative bg-center">
+        <div className="shape-right-bottom absolute right-0 bottom-0 max-w-[45%] z-0">
+          <Image
+            alt=""
+            src={"/Assets/others/shape2.png"}
+            style={{ objectFit: "cover" }}
+            width={1000}
+            height={536}
+          />
+        </div>
+        <div className="contact-container flex justify-center items-center">
+          <div className="contact-left w-[45%] flex-grow-0 flex-shrink-0 basis-auto p-2">
+            <div className="contact-form p-20 shadow-lg bg-white relative z-[1]">
+              <h3 className="sub-title uppercase mb-3 text-xl text-[var(--main-black)] font-extrabold inline-block relative tracking-wider">
+                Shoot us a message
+              </h3>
+              <h1 className="title text-4xl leading-[1.3] font-extrabold">
+                We won&apos;t leave it on seen
+              </h1>
+              <div className="form mt-12">
+                <div className="form-control-box flex flex-wrap">
+                  <div className="flex-grow-0 flex-shrink-0 basis-auto w-full mb-4">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Name"
+                    />
+                  </div>
+                  <div className="flex-grow-0 flex-shrink-0 basis-auto w-full my-8">
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="Email*"
+                    />
+                  </div>
+                  <div className="flex-grow-0 flex-shrink-0 basis-auto w-full my-8">
+                    <textarea
+                      name="description"
+                      id="description"
+                      cols="30"
+                      rows="5"
+                      className="form-control"
+                      placeholder="Tell Us About Your Project"
+                    ></textarea>
+                  </div>
+                  <div className="submit-btn my-6">
+                    <SecondaryButton
+                      name={"Get in touch"}
+                      icon={<FaTelegramPlane />}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <h2 className="contact-form-title lg:text-2xl text-[var(--main-white)] text-center px-7 lg:p-0 text-xl">
-            Tell us what are you looking for
-          </h2>
-        </div>
-        <div className="contact-inputs w-[90%] lg:w-3/5 px-5 mt-10 lg:m-0 lg:px-12 z-40">
-          <div className="right-contact-form">
-            <div className="contact-form">
-              <form action="https://fabform.io/f/kMrrySN" method="post">
-                <input
-                  type="text"
-                  className="form-control !bg-white"
-                  placeholder="Your Name Here*"
-                  id="contact-name"
-                  name="Name"
-                />
-                <input
-                  type="email"
-                  className="form-control !bg-white"
-                  placeholder="Your Email Here"
-                  id="contact-email"
-                  name="Email"
-                />
-                <textarea
-                  name="Message"
-                  id="contact-desc"
-                  rows="6"
-                  cols="40"
-                  className="form-control !bg-white"
-                  placeholder="Type Your Message*"
-                  area-invalid="false"
-                ></textarea>
-                <SliderButton name={"Submit"} yellow={true} />
-              </form>
+          <div className="contact-right w-1/3 ml-20 flex items-center justify-center flex-grow-0 flex-shrink-0 basis-auto z-50">
+            <div className="contact-info">
+              <div className="title mb-10">
+                <span className="font-extrabold text-4xl tracking-wide capitalize mb-6 inline-block">
+                  Contact Information
+                </span>
+                <p className="text-lg text-[var(--color-grey-2)]">
+                  Plan upon yet way get cold spot its week. Almost do am or
+                  limits hearts. Resolve parties.
+                </p>
+              </div>
+              <div className="contact-address grid grid-cols-2 gap-8">
+                <div className="contact-address-item">
+                  <h3 className="title font-extrabold text-lg leading-[1.3]">
+                    Phone
+                  </h3>
+                  <span className="data font-normal text-base py-4 inline-block">
+                    +91-8427733664
+                  </span>
+                </div>
+                <div className="contact-address-item">
+                  <h3 className="title font-extrabold text-lg leading-[1.3]">
+                    Location
+                  </h3>
+                  <span className="data font-normal text-base py-4 inline-block">
+                    Sector 34C, Chandigarh
+                  </span>
+                </div>
+                <div className="contact-address-item">
+                  <h3 className="title font-extrabold text-lg leading-[1.3]">
+                    Email
+                  </h3>
+                  <span className="data font-normal text-base py-4 inline-block cursor-pointer transition-all duration-200 hover:text-[var(--color-yellow-1)]">
+                    contact@promotr.co.in
+                  </span>
+                </div>
+                <div className="contact-address-item">
+                  <h3 className="title font-extrabold text-lg leading-[1.3]">
+                    Follow Us
+                  </h3>
+                  <div className="contact-social-links py-4 flex items-center justify-start space-x-2">
+                    <Link
+                      className="contact-social-link"
+                      href={"https://www.instagram.com/promotr.co/"}
+                      target="_blank"
+                    >
+                      <FaInstagram />
+                    </Link>
+                    <Link
+                      className="contact-social-link"
+                      href={
+                        "https://www.linkedin.com/in/promotr-agency-08843027b"
+                      }
+                      target="_blank"
+                    >
+                      <FaLinkedinIn />
+                    </Link>
+                    <Link
+                      className="contact-social-link"
+                      href={
+                        "https://twitter.com/promotr_co?t=8wfbhW0rHHzuD8kcE4GASw&s=08"
+                      }
+                      target="_blank"
+                    >
+                      <FaTwitter />
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

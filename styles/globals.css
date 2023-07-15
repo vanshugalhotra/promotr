@@ -24,6 +24,7 @@
 
   --color-grey-1: #0000000d;
   --color-grey-2: #999b9f;
+  --color-grey-3: #e7e7e7;
   --color-grey-5: #2a2e35;
   --color-black-1: #1c1e22;
   --color-yellow-1: #ffaa17;
@@ -191,6 +192,43 @@
   transform: rotateY(180deg);
 }
 
+.secondary-btn::after {
+  position: absolute;
+  top: 14px;
+  right: -20px;
+  bottom: -108px;
+  left: -5%;
+  content: "";
+  height: 150px;
+  width: 115%;
+  z-index: -1;
+  background-color: var(--color-black-1);
+  transition: all 0.25s ease-in-out;
+  transform: translateY(-45%) skew(25deg) scale(0);
+}
+
+.secondary-btn:hover::after {
+  transform: translateY(-45%) skew(25deg) scale(1.2);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-address-item {
+  visibility: visible;
+  animation-duration: 1500ms;
+  animation-delay: 0ms;
+  animation-name: fadeInUp;
+}
+
 @layer components {
   /* navbar */
 
@@ -232,12 +270,13 @@
   }
 
   /* contact */
-  .contact-left {
-    @apply w-[90%] lg:w-2/5 bg-[var(--secondary-yellow)] bg-[url('/Assets/others/circle.webp')]  bg-no-repeat bg-auto bg-right-bottom m-2 rounded-2xl flex items-center flex-col justify-between pb-32 pt-10;
-  }
 
   .form-control {
-    @apply relative block text-sm font-medium leading-5 text-gray-700 bg-transparent border border-gray-200 p-4 w-full mt-4 outline-none transition-all duration-300 hover:border-gray-700 hover:-translate-y-1;
+    @apply border-b border-b-[var(--color-grey-3)] p-0 block w-full text-lg font-medium leading-[1.5] text-[var(--secondary-black)] bg-[var(--secondary-white)] appearance-none transition-all pb-6 bg-clip-padding focus:border-b-[var(--color-yellow-1)] hover:border-b-[var(--color-yellow-1)] duration-100 rounded;
+  }
+
+  .contact-social-link {
+    @apply w-10 h-10 rounded border-2 border-[var(--main-black)] text-center flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-[var(--secondary-black)] hover:text-white;
   }
 
   /* services */
