@@ -5,7 +5,19 @@ import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { openPopup } from "@/slices/servicesSlice";
 
-const SingleServiceCardFlip = ({ image, name, count, desc, backImage }) => {
+import dynamic from "next/dynamic";
+
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
+// import ReactPlayer from "react-player/lazy";
+
+const SingleServiceCardFlip = ({
+  image,
+  name,
+  count,
+  desc,
+  backImage,
+  backVideo,
+}) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -31,13 +43,25 @@ const SingleServiceCardFlip = ({ image, name, count, desc, backImage }) => {
           </div>
         </div>
         <div className="back">
-          <Image
-            alt=""
-            src={backImage}
-            className="rounded"
-            style={{ objectFit: "cover" }}
-            layout="fill"
-          />
+          {backImage && (
+            <Image
+              alt=""
+              src={backImage}
+              className="rounded"
+              style={{ objectFit: "cover" }}
+              layout="fill"
+            />
+          )}
+          {backVideo && (
+            <ReactPlayer
+              url={backVideo}
+              width="100%"
+              height="100%"
+              muted={true}
+              playing={true}
+              loop={true}
+            />
+          )}
         </div>
       </div>
     </div>

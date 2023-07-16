@@ -19,84 +19,90 @@ const Marketing = () => {
       name: "Business Card",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage:
+        "/Assets/icons/services/Yellow/Graphic/CardFlip/businesscard.jpeg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/brand_stationary.png",
       name: "Brand Stationary",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage:
+        "/Assets/icons/services/Yellow/Graphic/CardFlip/brand_stationary.png",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/brand_merchandise.png",
       name: "Brand Merchandise",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage:
+        "/Assets/icons/services/Yellow/Graphic/CardFlip/brand_merchandise.jpg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/brandkit.png",
       name: "Brand Kit",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage: "/Assets/icons/services/Yellow/Graphic/CardFlip/brandkit.png",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/logo.png",
       name: "Logo Design",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage: "/Assets/icons/services/Yellow/Graphic/CardFlip/logo.png",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/product_catalogue.png",
       name: "Product Catalogue",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage:
+        "/Assets/icons/services/Yellow/Graphic/CardFlip/product_catalogue.png",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/labelling.png",
       name: "Labelling & Packaging",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage: "/Assets/icons/services/Yellow/Graphic/CardFlip/labelling.png",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/social_media_graphics.png",
       name: "Social Media Graphics",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage:
+        "/Assets/icons/services/Yellow/Graphic/CardFlip/social_media_graphics.jpg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/social_media_ads.png",
       name: "Social Media Ads",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage:
+        "/Assets/icons/services/Yellow/Graphic/CardFlip/social_media_ads.jpg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/posters.png",
       name: "Poster, Flyers, Editorials",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage: "/Assets/icons/services/Yellow/Graphic/CardFlip/posters.jpeg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/art.png",
       name: "Art & Illustrations",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backImage: "/Assets/icons/services/Yellow/Graphic/CardFlip/art.jpeg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/videos.png",
       name: "Videos",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/test.jpg",
+      backVideo: "/Assets/icons/services/Yellow/Graphic/CardFlip/videos.mp4",
     },
   ];
 
@@ -115,7 +121,7 @@ const Marketing = () => {
       <div className="service-cards flex justify-center  my-28">
         <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
           {cardsData.map((eachCard, index) => {
-            if (eachCard.backImage) {
+            if (eachCard.backImage || eachCard.backVideo) {
               return (
                 <div key={index}>
                   <SingleServiceCardFlip {...eachCard} />

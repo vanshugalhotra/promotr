@@ -22,7 +22,11 @@ const Contact = () => {
   return (
     <div className={`relative min-h-screen ${Manrope_Font.className}`}>
       <Navbar />
-      <div className="backgroud h-[50vh] bg-yellow-200"></div>
+      <div className="h-[60vh] w-full flex items-center bg-[url('/Assets/background/bg4.jpg')] bg-center bg-no-repeat bg-cover opacity-100">
+        <div className="heading relative left-[10%] text-7xl text-[var(--main-white)] capitalize font-extrabold">
+          <span>Feel free to contact us</span>
+        </div>
+      </div>
       <div
         className="contact-section py-16 bg-[url('/Assets/others/map.png')] relative bg-center"
         id="contactus"
@@ -42,7 +46,7 @@ const Contact = () => {
               <h3 className="sub-title uppercase mb-3 text-xl text-[var(--main-black)] font-extrabold inline-block relative tracking-wider">
                 Got a problem?
               </h3>
-              <h1 className="title text-4xl leading-[1.3] font-extrabold">
+              <h1 className="title text-4xl leading-[1.3] font-extrabold capitalize">
                 we have a solution.
               </h1>
               <div className="form mt-12">
