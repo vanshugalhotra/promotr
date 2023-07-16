@@ -28,7 +28,7 @@ const Marketing = () => {
       count: 499,
       desc: "Marketing Options",
       backImage:
-        "/Assets/icons/services/Yellow/Graphic/CardFlip/brand_stationary.png",
+        "/Assets/icons/services/Yellow/Graphic/CardFlip/brand_stationary.jpg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/brand_merchandise.png",
@@ -43,7 +43,7 @@ const Marketing = () => {
       name: "Brand Kit",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/icons/services/Yellow/Graphic/CardFlip/brandkit.png",
+      backImage: "/Assets/icons/services/Yellow/Graphic/CardFlip/brandkit.jpg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/logo.png",
@@ -58,14 +58,14 @@ const Marketing = () => {
       count: 499,
       desc: "Marketing Options",
       backImage:
-        "/Assets/icons/services/Yellow/Graphic/CardFlip/product_catalogue.png",
+        "/Assets/icons/services/Yellow/Graphic/CardFlip/product_catalogue.jpg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/labelling.png",
       name: "Labelling & Packaging",
       count: 499,
       desc: "Marketing Options",
-      backImage: "/Assets/icons/services/Yellow/Graphic/CardFlip/labelling.png",
+      backImage: "/Assets/icons/services/Yellow/Graphic/CardFlip/labelling.jpg",
     },
     {
       image: "/Assets/icons/services/Yellow/Graphic/social_media_graphics.png",

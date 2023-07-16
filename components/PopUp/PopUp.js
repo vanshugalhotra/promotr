@@ -39,29 +39,30 @@ const PopUp = () => {
               Get in Touch !!
             </div>
             <div className="form">
-              <input
-                type="text"
-                className="form-control !py-3"
-                placeholder="Name*"
-                id="popup-name"
-                name="Name"
-              />
-              <input
-                type="text"
-                className="form-control !py-3"
-                placeholder="Phone Number*"
-                id="popup-phone"
-                name="Phone"
-              />
-              <textarea
-                name="Message"
-                id="contact-desc"
-                rows="3"
-                cols="40"
-                className="form-control"
-                placeholder="Type Your Message*"
-                area-invalid="false"
-              ></textarea>
+              <div className="flex-grow-0 flex-shrink-0 basis-auto w-full mb-4">
+                <input
+                  type="text"
+                  className="form-control !pb-4"
+                  placeholder="Name"
+                />
+              </div>
+              <div className="flex-grow-0 flex-shrink-0 basis-auto w-full my-8">
+                <input
+                  type="text"
+                  className="form-control !pb-4"
+                  placeholder="Email or Phone*"
+                />
+              </div>
+              <div className="flex-grow-0 flex-shrink-0 basis-auto w-full mt-8">
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="30"
+                  rows="3"
+                  className="form-control !pb-4"
+                  placeholder="Type your message"
+                ></textarea>
+              </div>
               <SliderButton name={"Submit"} yellow={true} small={true} />
             </div>
           </div>

@@ -23,7 +23,7 @@ const Contact = () => {
     <div className={`relative min-h-screen ${Manrope_Font.className}`}>
       <Navbar />
       <div className="h-[60vh] w-full flex items-center bg-[url('/Assets/background/bg4.jpg')] bg-center bg-no-repeat bg-cover opacity-100">
-        <div className="heading relative left-[10%] text-7xl text-[var(--main-white)] capitalize font-extrabold">
+        <div className="heading relative ml-10 lg:ml-20 text-4xl xs:text-5xl leading-snug lg:text-7xl text-[var(--main-white)] capitalize font-extrabold">
           <span>Feel free to contact us</span>
         </div>
       </div>

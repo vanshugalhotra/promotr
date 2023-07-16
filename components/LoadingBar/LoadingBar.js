@@ -26,7 +26,7 @@ const LoadingBar = () => {
       setTimeout(() => {
         dispatch(setProgress(100));
         dispatch(setLoading(false));
-      }, 500);
+      }, 100);
     };
 
     router.events.on("routeChangeStart", handleRouteChangeStart);
