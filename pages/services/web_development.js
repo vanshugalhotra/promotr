@@ -54,7 +54,7 @@ const Marketing = () => {
 
   return (
     <section>
-      <div className="h-[450px] bg-[var(--main-black)] w-full bg-center bg-no-repeat bg-cover opacity-100">
+      <div className="h-[150px] sm:h-[350px] md:h-[450px] w-full bg-center bg-no-repeat bg-cover opacity-100">
         <ReactPlayer
           url="/Assets/Videos/web1.mp4"
           width="100%"
@@ -64,7 +64,7 @@ const Marketing = () => {
           pip={true}
         />
       </div>
-      <div className="service-cards flex justify-center  my-28">
+      <div className="service-cards flex justify-center my-12 lg:my-28">
         <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
           {cardsData.map((eachCard, index) => {
             if (eachCard.backImage) {

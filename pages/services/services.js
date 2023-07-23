@@ -31,6 +31,12 @@ const Services = () => {
             image={"/Assets/icons/services/Yellow/web_development.png"}
             url={"/services/web_development"}
           />
+          <ServiceCard
+            name={"Event Management"}
+            desc={"Lorem ipsum is are many variations of pass of majority."}
+            image={"/Assets/icons/services/Yellow/events.png"}
+            url={"/services/eventmanagement"}
+          />
         </div>
       </div>
     </div>

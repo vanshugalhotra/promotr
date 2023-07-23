@@ -166,7 +166,7 @@ const Navbar = () => {
     },
     {
       name: "About Us",
-      url: "/about",
+      url: "/",
     },
     {
       name: "Contact",
@@ -190,8 +190,8 @@ const Navbar = () => {
           <Image
             alt="Promotr"
             src={"/Assets/logo/promotr.png"}
-            width={windowWidth > 768 ? 170 : 200}
-            height={windowWidth > 768 ? 170 : 200}
+            width={windowWidth > 768 ? 170 : 190}
+            height={windowWidth > 768 ? 170 : 190}
           />
         </Link>
 

@@ -39,7 +39,7 @@ const Marketing = () => {
 
   return (
     <section>
-      <div className="h-[450px] bg-[var(--main-black)] w-full bg-center bg-no-repeat bg-cover opacity-100">
+      <div className="h-[450px] w-full bg-center bg-no-repeat bg-cover opacity-100">
         <ReactPlayer
           url="/Assets/Videos/events.mp4"
           width="100%"
