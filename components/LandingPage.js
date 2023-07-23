@@ -97,8 +97,9 @@ const LandingPage = () => {
               <div
                 className={`desc pt-10 text-[var(--color-grey-2)] leading-7 ${Rubik_Font.className}`}
               >
-                Surround yourself with a community of like-minded creatives and
-                let collaboration inspire you.
+                Surround yourself with a community of like-minded creatives,
+                designers and Artificial Intelligence, create a collaboration
+                that inspire you.
               </div>
             </div>
             <div className="flex justify-center">
@@ -155,8 +156,9 @@ const LandingPage = () => {
               <div
                 className={`desc pt-10 text-[var(--color-grey-2)] leading-7 ${Rubik_Font.className}`}
               >
-                Leverage Online Channels to Reach, Engage, and Convert Your
-                Target Audience!
+                Tap into the Secrets of Successful Campaigns and Conversions
+                with our experts, insights and Al. Digital marketing to content
+                creation and branding, we cover it all.
               </div>
             </div>
           </div>

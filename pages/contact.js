@@ -161,7 +161,7 @@ const Contact = () => {
                     Phone
                   </h3>
                   <span className="data font-normal text-base py-4 inline-block">
-                    +91-8427733664
+                    +91-6283910290
                   </span>
                 </div>
                 <div className="contact-address-item">

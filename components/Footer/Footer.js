@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdPhone } from "react-icons/md";
 
 const Footer = () => {
   return (
@@ -114,6 +114,10 @@ const Footer = () => {
                 contact@promotr.co.in
               </span>
             </Link>
+            <div className="flex items-center space-x-4 cursor-pointer">
+              <MdPhone className="text-[var(--color-yellow-1)]" />{" "}
+              <span className="explore-item !normal-case">+91-6283910290</span>
+            </div>
           </div>
         </div>
         <div className="grid-item">

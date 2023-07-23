@@ -25,12 +25,12 @@ const Marketing = () => {
       desc: "Love and logistics, hand in hand – your perfect wedding planner.",
     },
     {
-      image: "/Assets/vectors/educational.svg",
+      image: "/Assets/vectors/educational.jpg",
       name: "educational events",
       desc: "Empowering minds, seamless educational event management.",
     },
     {
-      image: "/Assets/vectors/political.svg",
+      image: "/Assets/vectors/political.jpg",
       name: "Political Management",
       desc: "Strategic expertise for successful political campaigns and governance.",
     },

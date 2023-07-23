@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
+import { Analytics } from "@vercel/analytics/react";
+
 // Component imports
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -65,6 +67,7 @@ function MyApp({ Component, pageProps }) {
 
         {!isHomePage && !isContactPage && <Navbar />}
         <Component {...pageProps} />
+        <Analytics />
         <Footer />
       </Provider>
     </main>
