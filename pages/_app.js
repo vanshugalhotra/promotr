@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 // Component imports
 import Navbar from "@/components/Navbar/Navbar";
@@ -19,7 +20,7 @@ import "@/styles/globals.css";
 import { Provider } from "react-redux";
 import { store } from "../store";
 
-import { setProgress, setWindowWidth } from "@/slices/globalSlice";
+import { setWindowWidth } from "@/slices/globalSlice";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -41,6 +42,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <main className={DM_SANS.className}>
       <Provider store={store}>
+        <Head>
+          <title>Promotr</title>
+        </Head>
         <TopLoadingBar />
         <LoadingBar />
         {!isHomePage && !isContactPage && <Navbar />}
