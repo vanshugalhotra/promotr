@@ -3,7 +3,7 @@ import Image from "next/image";
 
 // redux
 import { useDispatch } from "react-redux";
-import { openPopup } from "@/slices/servicesSlice";
+import { openPopup, setPopupForm } from "@/slices/servicesSlice";
 import { Manrope } from "next/font/google";
 
 const Manrope_Font = Manrope({
@@ -11,10 +11,11 @@ const Manrope_Font = Manrope({
   weight: ["400", "500", "800"],
 });
 
-const SingleServiceCardBig = ({ image, name, desc }) => {
+const SingleServiceCardBig = ({ image, name, desc, popupForm }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
+    dispatch(setPopupForm(popupForm));
     dispatch(openPopup());
   };
 
@@ -45,3 +46,7 @@ const SingleServiceCardBig = ({ image, name, desc }) => {
 };
 
 export default SingleServiceCardBig;
+
+SingleServiceCardBig.defaultProps = {
+  popupForm: true,
+};

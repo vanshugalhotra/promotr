@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
 import { Analytics } from "@vercel/analytics/react";
 
 // Component imports
 import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
+const Footer = dynamic(() => import("@/components/Footer/Footer")); // lazy loading the component
+
 import TopLoadingBar from "@/components/LoadingBar/TopLoadingBar";
 import LoadingBar from "@/components/LoadingBar/LoadingBar";
 

@@ -2,13 +2,14 @@ import React from "react";
 import SingleServiceCard from "@/components/Cards/SingleServiceCard";
 
 import { useSelector } from "react-redux";
-import PopUp from "@/components/PopUp/PopUp";
 
 import dynamic from "next/dynamic";
 import SingleServiceCardFlip from "@/components/Cards/SingleServiceCardFlip";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
-// import ReactPlayer from "react-player/lazy";
+
+const PopUp = dynamic(() => import("@/components/PopUp/PopUp")); // lazy loading the component
+
 
 const Marketing = () => {
   const showPopup = useSelector((state) => state.services.showPopup);

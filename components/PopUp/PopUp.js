@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { closePopup } from "@/slices/servicesSlice";
 import ReactPlayer from "react-player/lazy";
 
@@ -58,6 +58,8 @@ const PopUp = () => {
     }
   };
 
+  const popupForm = useSelector((state) => state.services.popupForm);
+
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="popup bg-gray-800 bg-opacity-75 w-full h-full flex items-center justify-center">
@@ -81,47 +83,55 @@ const PopUp = () => {
               pip={true}
             />
           </div>
-          <div className="right flex flex-col px-8 w-full lg:w-3/5">
-            <div className="heading uppercase text-3xl my-12 lg:my-4 text-center font-semibold">
-              Get in Touch !!
-            </div>
-            <div className="form">
-              <div className="flex-grow-0 flex-shrink-0 basis-auto w-full mb-4">
-                <input
-                  type="text"
-                  className="form-control !pb-4"
-                  placeholder="Name"
-                  onChange={handleChange}
-                  value={formData.name}
-                  name="name"
-                />
+          <div className="right flex flex-col  justify-center px-8 w-full lg:w-3/5">
+            {popupForm && (
+              <div>
+                <div className="heading uppercase text-3xl my-12 lg:my-4 text-center font-semibold">
+                  Get in Touch !!
+                </div>
+                <div className="form">
+                  <div className="flex-grow-0 flex-shrink-0 basis-auto w-full mb-4">
+                    <input
+                      type="text"
+                      className="form-control !pb-4"
+                      placeholder="Name"
+                      onChange={handleChange}
+                      value={formData.name}
+                      name="name"
+                    />
+                  </div>
+                  <div className="flex-grow-0 flex-shrink-0 basis-auto w-full my-8">
+                    <input
+                      type="text"
+                      className="form-control !pb-4"
+                      placeholder="Email or Phone*"
+                      onChange={handleChange}
+                      value={formData.email}
+                      name="email"
+                    />
+                  </div>
+                  <div className="flex-grow-0 flex-shrink-0 basis-auto w-full mt-8">
+                    <textarea
+                      name="description"
+                      id="description"
+                      cols="30"
+                      rows="3"
+                      className="form-control !pb-4"
+                      placeholder="Type your message"
+                      onChange={handleChange}
+                      value={formData.description}
+                    ></textarea>
+                  </div>
+                  <div onClick={handleSubmit}>
+                    <SliderButton name={"Submit"} yellow={true} small={true} />
+                  </div>
+                </div>
               </div>
-              <div className="flex-grow-0 flex-shrink-0 basis-auto w-full my-8">
-                <input
-                  type="text"
-                  className="form-control !pb-4"
-                  placeholder="Email or Phone*"
-                  onChange={handleChange}
-                  value={formData.email}
-                  name="email"
-                />
+            )}{
+              !popupForm && <div className="block m-auto text-4xl tracking-widest font-semibold capitalize">
+                <h1>Coming Soon.....</h1>
               </div>
-              <div className="flex-grow-0 flex-shrink-0 basis-auto w-full mt-8">
-                <textarea
-                  name="description"
-                  id="description"
-                  cols="30"
-                  rows="3"
-                  className="form-control !pb-4"
-                  placeholder="Type your message"
-                  onChange={handleChange}
-                  value={formData.description}
-                ></textarea>
-              </div>
-              <div onClick={handleSubmit}>
-                <SliderButton name={"Submit"} yellow={true} small={true} />
-              </div>
-            </div>
+            }
           </div>
         </div>
       </div>

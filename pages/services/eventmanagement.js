@@ -1,13 +1,13 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-import PopUp from "@/components/PopUp/PopUp";
 
 import dynamic from "next/dynamic";
 import SingleServiceCardBig from "@/components/Cards/SingleServiceCardBig";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
-// import ReactPlayer from "react-player/lazy";
+
+const PopUp = dynamic(() => import("@/components/PopUp/PopUp")); // lazy loading the component
 
 const Marketing = () => {
   const showPopup = useSelector((state) => state.services.showPopup);
@@ -23,6 +23,7 @@ const Marketing = () => {
       image: "/Assets/vectors/wedding.jpg",
       name: "Wedding Planning",
       desc: "Love and logistics, hand in hand – your perfect wedding planner.",
+      popupForm: false,
     },
     {
       image: "/Assets/vectors/educational.jpg",

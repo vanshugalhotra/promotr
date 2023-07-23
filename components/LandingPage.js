@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Teko, Rubik } from "next/font/google";
 
 const Teko_Font = Teko({ subsets: ["latin"], weight: ["400", "600"] });
@@ -8,7 +9,10 @@ const Rubik_Font = Rubik({ subsets: ["latin"], weight: ["400"] });
 // Redux
 import { useSelector } from "react-redux";
 import Navbar from "./Navbar/Navbar";
-import ServiceCardSmall from "./Cards/ServiceCardSmall";
+
+// import ServiceCardSmall from "./Cards/ServiceCardSmall";
+const ServiceCardSmall = dynamic(() => import("./Cards/ServiceCardSmall")); // lazy loading the component
+
 import SliderButton from "./Buttons/SliderButton";
 
 const LandingPage = () => {
