@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { closePopup } from "@/slices/servicesSlice";
 import ReactPlayer from "react-player/lazy";
@@ -7,9 +7,56 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import SliderButton from "../Buttons/SliderButton";
+import { setLoading } from "@/slices/globalSlice";
+
+import { raiseToast } from "@/utils/utilityFuncs";
 
 const PopUp = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    description: "",
+    queryFrom: "Services - PopUp",
+  });
   const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    dispatch(setLoading(true));
+    try {
+      // Send the form data to the serverless function
+      const response = await fetch("/api/contact/formtoemail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response) {
+        dispatch(setLoading(false));
+      }
+      if (response.ok) {
+        // Reset the form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          description: "",
+          queryFrom: "Services - PopUp",
+        });
+        raiseToast("success", "We'll get back to you!!🤞");
+      } else {
+        raiseToast("error", "There was an error while submitting the form");
+      }
+    } catch (error) {
+      raiseToast("error", "There was an error while submitting the form");
+    }
+  };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -44,6 +91,9 @@ const PopUp = () => {
                   type="text"
                   className="form-control !pb-4"
                   placeholder="Name"
+                  onChange={handleChange}
+                  value={formData.name}
+                  name="name"
                 />
               </div>
               <div className="flex-grow-0 flex-shrink-0 basis-auto w-full my-8">
@@ -51,6 +101,9 @@ const PopUp = () => {
                   type="text"
                   className="form-control !pb-4"
                   placeholder="Email or Phone*"
+                  onChange={handleChange}
+                  value={formData.email}
+                  name="email"
                 />
               </div>
               <div className="flex-grow-0 flex-shrink-0 basis-auto w-full mt-8">
@@ -61,9 +114,13 @@ const PopUp = () => {
                   rows="3"
                   className="form-control !pb-4"
                   placeholder="Type your message"
+                  onChange={handleChange}
+                  value={formData.description}
                 ></textarea>
               </div>
-              <SliderButton name={"Submit"} yellow={true} small={true} />
+              <div onClick={handleSubmit}>
+                <SliderButton name={"Submit"} yellow={true} small={true} />
+              </div>
             </div>
           </div>
         </div>

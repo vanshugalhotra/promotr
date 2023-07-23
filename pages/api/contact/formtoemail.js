@@ -7,7 +7,7 @@ export default async function handler(req, res) {
       .json({ message: "Method Not Allowed", success: false });
   }
 
-  const { name, email, description } = req.body;
+  const { name, email, description, queryFrom } = req.body;
 
   // Replace the following with your email configuration
   const transporter = nodemailer.createTransport({
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     from: process.env.FROM_EMAIL,
     to: process.env.TO_EMAIL, // Replace with your email address
     subject: `New Query from ${name}`,
-    text: `Hi, My name is ${name}\nMy email: ${email}\n${description}`,
+    text: `Hi, My name is ${name}\nMy email: ${email}\n${description}\n\n\nQuery From: ${queryFrom}`,
   };
 
   try {

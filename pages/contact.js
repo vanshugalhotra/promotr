@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
 
+import { useDispatch } from "react-redux";
+
 import {
   FaTelegramPlane,
   FaInstagram,
@@ -10,8 +12,11 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
+import { raiseToast } from "@/utils/utilityFuncs";
+
 import { Manrope } from "next/font/google";
 import SecondaryButton from "@/components/Buttons/SecondaryButton";
+import { setLoading } from "@/slices/globalSlice";
 
 const Manrope_Font = Manrope({
   subsets: ["latin"],
@@ -23,7 +28,9 @@ const Contact = () => {
     name: "",
     email: "",
     description: "",
+    queryFrom: "Contact Form",
   });
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +40,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    dispatch(setLoading(true));
     try {
       // Send the form data to the serverless function
       const response = await fetch("/api/contact/formtoemail", {
@@ -42,20 +50,23 @@ const Contact = () => {
         },
         body: JSON.stringify(formData),
       });
+      if (response) {
+        dispatch(setLoading(false));
+      }
       if (response.ok) {
         // Reset the form after successful submission
         setFormData({
           name: "",
           email: "",
           description: "",
+          queryFrom: "Contact Form",
         });
-        alert("Form submitted successfully!");
+        raiseToast("success", "Form Submitted Successfully!!🤞");
       } else {
-        alert("An error occurred while submitting the form.");
+        raiseToast("error", "There was an error while submitting the form");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred while submitting the form.");
+      raiseToast("error", "There was an error while submitting the form");
     }
   };
 

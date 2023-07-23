@@ -41,7 +41,7 @@ const LoadingBar = () => {
   return (
     <div>
       {loading && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center h-screen bg-black bg-opacity-60 z-50">
+        <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center h-screen bg-black bg-opacity-60 z-[500000]">
      <ReactPlayer
         url={"/Assets/loader.mp4"}
         playing

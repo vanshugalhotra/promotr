@@ -8,9 +8,12 @@ import Footer from "@/components/Footer/Footer";
 import TopLoadingBar from "@/components/LoadingBar/TopLoadingBar";
 import LoadingBar from "@/components/LoadingBar/LoadingBar";
 
+// toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // fonts
 import { DM_Sans } from "next/font/google";
-
 const DM_SANS = DM_Sans({ subsets: ["latin"], weight: ["400"] });
 
 //css imports
@@ -45,8 +48,21 @@ function MyApp({ Component, pageProps }) {
         <Head>
           <title>Promotr</title>
         </Head>
+        <ToastContainer
+          position="top-center"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <TopLoadingBar />
         <LoadingBar />
+
         {!isHomePage && !isContactPage && <Navbar />}
         <Component {...pageProps} />
         <Footer />
