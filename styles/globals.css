@@ -229,6 +229,11 @@
   animation-name: fadeInUp;
 }
 
+.events-card {
+  box-shadow: 0 10px 50px rgba(4, 74, 194, 0.109);
+  border: 1px solid rgba(88, 136, 247, 0.15);
+}
+
 @layer components {
   /* navbar */
 

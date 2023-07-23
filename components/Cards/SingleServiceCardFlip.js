@@ -37,7 +37,7 @@ const SingleServiceCardFlip = ({
           <div className="name text-center py-4 font-semibold text-[var(--secondary-black)] leading-normal tracking-wide capitalize">
             {name}
           </div>
-          <div className="desc text-xs text-center">
+          <div className="desc text-xs text-center hidden">
             <div className="count text-gray-500 py-1">{count}+</div>
             <div className="text text-gray-700">{desc}</div>
           </div>

@@ -162,7 +162,7 @@ const Navbar = () => {
     },
     {
       name: "Events",
-      url: "/events",
+      url: "/services/eventmanagement",
     },
     {
       name: "About Us",
