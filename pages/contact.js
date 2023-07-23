@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import {
@@ -19,6 +19,46 @@ const Manrope_Font = Manrope({
 });
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Send the form data to the serverless function
+      const response = await fetch("/api/contact/formtoemail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        // Reset the form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          description: "",
+        });
+        alert("Form submitted successfully!");
+      } else {
+        alert("An error occurred while submitting the form.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred while submitting the form.");
+    }
+  };
+
   return (
     <div className={`relative min-h-screen ${Manrope_Font.className}`}>
       <Navbar />
@@ -56,6 +96,9 @@ const Contact = () => {
                       type="text"
                       className="form-control"
                       placeholder="Name"
+                      name="name"
+                      onChange={handleChange}
+                      value={formData.name}
                     />
                   </div>
                   <div className="flex-grow-0 flex-shrink-0 basis-auto w-full my-8">
@@ -63,6 +106,9 @@ const Contact = () => {
                       type="email"
                       className="form-control"
                       placeholder="Email*"
+                      name="email"
+                      onChange={handleChange}
+                      value={formData.email}
                     />
                   </div>
                   <div className="flex-grow-0 flex-shrink-0 basis-auto w-full my-8">
@@ -73,9 +119,11 @@ const Contact = () => {
                       rows="5"
                       className="form-control"
                       placeholder="Tell Us About Your Project"
+                      onChange={handleChange}
+                      value={formData.description}
                     ></textarea>
                   </div>
-                  <div className="submit-btn my-6">
+                  <div className="submit-btn my-6" onClick={handleSubmit}>
                     <SecondaryButton
                       name={"Get in touch"}
                       icon={<FaTelegramPlane />}
