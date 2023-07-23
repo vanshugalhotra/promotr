@@ -127,7 +127,7 @@ const LandingPage = () => {
                   "/Assets/icons/services/Black/digital_marketing.png"
                 }
                 counter={"03"}
-                url={"/services/traditionalmarketing"}
+                url={"/services/digitalmarketing"}
               />
             </div>
             <div className="flex justify-center">
@@ -140,7 +140,7 @@ const LandingPage = () => {
                   "/Assets/icons/services/Black/traditional_marketing.png"
                 }
                 counter={"04"}
-                url={"/services/digitalmarketing"}
+                url={"/services/traditionalmarketing"}
               />
             </div>
             <div className="services-title-box col-span-1 xl:col-span-2 px-12 py-6">

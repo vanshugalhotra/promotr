@@ -59,13 +59,13 @@ const Footer = () => {
           </div>
           <div className="explore-items flex">
             <div className="row-1 flex flex-col mr-8">
-              <Link href={"/about"} className="explore-item">
+              <Link href={"/"} className="explore-item">
                 About
               </Link>
-              <Link href={"/services"} className="explore-item">
+              <Link href={"/services/services"} className="explore-item">
                 Services
               </Link>
-              <Link href={"/events"} className="explore-item">
+              <Link href={"/services/eventmanagement"} className="explore-item">
                 Events
               </Link>
               <Link href={"/contact"} className="explore-item">

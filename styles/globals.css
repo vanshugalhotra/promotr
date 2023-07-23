@@ -10,6 +10,10 @@
   outline: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* colors */
   --main-black: #111111;

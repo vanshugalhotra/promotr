@@ -25,7 +25,7 @@ const ServiceCard = ({ name, desc, icon, url, image }) => {
       onMouseLeave={handleMouseLeave}
       href={url}
     >
-      <div className="inner-box relative block py-12 px-11 rounded-lg bg-[#ffffff] shadow-md">
+      <div className="inner-box relative block py-12 px-11 rounded-lg bg-[#ffffff] shadow-md min-h-[330px]">
         <div
           ref={bottomCurveRef}
           className="bottom-curve absolute -right-[70px] -bottom-[10px] w-[120px] h-[120px] bg-[#ffffff] opacity-10 z-0"
