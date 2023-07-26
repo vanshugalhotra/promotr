@@ -21,7 +21,7 @@ const SingleServiceCardBig = ({ image, name, desc, popupForm }) => {
 
   return (
     <div
-      className={`${Manrope_Font.className} events-card shadow cursor-pointer transition-all duration-300 ease-in w-[250px] xs:w-[300px] lg:w-[380px] min-h-[360px] sm:min-h-[360px] overflow-hidden border border-gray-200 border-opacity-60`}
+      className={`${Manrope_Font.className} events-card shadow cursor-pointer transition-all duration-300 ease-in w-[250px] xs:w-[300px] lg:w-[380px] min-h-[360px] sm:min-h-[360px] overflow-hidden border border-gray-200 border-opacity-60 hover:scale-[1.02]`}
       onClick={handleClick}
     >
       <div className="relative thumbnail h-[235px]">

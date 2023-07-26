@@ -151,6 +151,10 @@ const Navbar = () => {
             name: "Web Development",
             url: "/services/web_development",
           },
+          {
+            name: "Event Management",
+            url: "/services/eventmanagement",
+          },
         ],
         toggleDropDown: toggleServicesDropDown,
         showDropDown: showServicesDropdown,
@@ -159,10 +163,6 @@ const Navbar = () => {
         handleDropDownBlur: handleServicesDropDownBlur,
         handleDropDownFocus: handleServicesDropDownFocus,
       },
-    },
-    {
-      name: "Events",
-      url: "/services/eventmanagement",
     },
     {
       name: "About Us",

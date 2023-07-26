@@ -19,12 +19,7 @@ const Marketing = () => {
       name: "corporate events",
       desc: "From concept to execution, flawlessly orchestrating your corporate events.",
     },
-    {
-      image: "/Assets/vectors/wedding.jpg",
-      name: "Wedding Planning",
-      desc: "Love and logistics, hand in hand – your perfect wedding planner.",
-      popupForm: false,
-    },
+
     {
       image: "/Assets/vectors/educational.jpg",
       name: "educational events",
@@ -34,6 +29,12 @@ const Marketing = () => {
       image: "/Assets/vectors/political.jpg",
       name: "Political Management",
       desc: "Strategic expertise for successful political campaigns and governance.",
+    },
+    {
+      image: "/Assets/vectors/wedding.jpg",
+      name: "Wedding Planning",
+      desc: "Love and logistics, hand in hand – your perfect wedding planner.",
+      popupForm: false,
     },
   ];
 

@@ -168,8 +168,8 @@ const Contact = () => {
                   <h3 className="title font-extrabold text-lg leading-[1.3]">
                     Location
                   </h3>
-                  <span className="data font-normal text-base py-4 inline-block">
-                    Sector 34C, Chandigarh
+                  <span className="data font-normal text-base py-4 inline-block capitalize">
+                    SCO- 134-135, first floor, Sector 34A, Chandigarh
                   </span>
                 </div>
                 <div className="contact-address-item">
@@ -219,7 +219,7 @@ const Contact = () => {
       </div>
       <div className="map-section w-full mt-8 xl:mt-0">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3237.32578397747!2d76.7665321013762!3d30.72326344806705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1689451230242!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d214.3665295730637!2d76.76853010573551!3d30.72221021188915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDQzJzIwLjEiTiA3NsKwNDYnMDcuMSJF!5e0!3m2!1sen!2sin!4v1690392094439!5m2!1sen!2sin"
           className="w-[98vw] h-[500px]"
           allowFullScreen=""
           loading="lazy"
