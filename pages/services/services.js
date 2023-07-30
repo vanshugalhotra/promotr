@@ -38,7 +38,7 @@ const Services = () => {
                 "Transforming ideas into stunning visuals with creative expertise."
               }
               image={"/Assets/icons/services/Yellow/graphic_design.png"}
-              url={"/services/graphic_designing"}
+              url={"/services/graphicdesigning"}
             />
             <ServiceCard
               name={"Web Development"}
@@ -46,7 +46,7 @@ const Services = () => {
                 "Crafting websites that deliver seamless user experiences and results"
               }
               image={"/Assets/icons/services/Yellow/web_development.png"}
-              url={"/services/web_development"}
+              url={"/services/webdevelopment"}
             />
             <ServiceCard
               name={"Event Management"}

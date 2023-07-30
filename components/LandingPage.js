@@ -112,7 +112,7 @@ const LandingPage = () => {
                 image={"/Assets/icons/services/Yellow/web_development.png"}
                 imageHover={"/Assets/icons/services/Black/web_development.png"}
                 counter={"01"}
-                url={"/services/web_development"}
+                url={"/services/webdevelopment"}
               />
             </div>
             <div className="flex justify-center">
@@ -121,7 +121,7 @@ const LandingPage = () => {
                 image={"/Assets/icons/services/Yellow/graphic_design.png"}
                 imageHover={"/Assets/icons/services/Black/graphic_design.png"}
                 counter={"02"}
-                url={"/services/graphic_designing"}
+                url={"/services/graphicdesigning"}
               />
             </div>
             <div className="flex justify-center">
