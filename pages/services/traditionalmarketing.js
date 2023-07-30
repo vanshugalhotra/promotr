@@ -5,11 +5,11 @@ import SingleServiceCardFlip from "@/components/Cards/SingleServiceCardFlip";
 import { useSelector } from "react-redux";
 
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 const PopUp = dynamic(() => import("@/components/PopUp/PopUp")); // lazy loading the component
-
 
 const Marketing = () => {
   const showPopup = useSelector((state) => state.services.showPopup);
@@ -78,37 +78,44 @@ const Marketing = () => {
   ];
 
   return (
-    <section>
-      <div className="h-[150px] sm:h-[350px] md:h-[450px]  w-full bg-center bg-no-repeat bg-cover opacity-100">
-        <ReactPlayer
-          url="/Assets/Videos/traditional.mp4"
-          width="100%"
-          height="100%"
-          muted={true}
-          playing={true}
-          pip={true}
-        />
-      </div>
-      <div className="service-cards flex justify-center my-12 lg:my-28">
-        <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-          {cardsData.map((eachCard, index) => {
-            if (eachCard.backImage) {
+    <>
+      <Head>
+        <title>Promotr - Traditional Marketing</title>
+        <meta name="description" content="Discover the power of traditional marketing with our specialized services. From print media advertising to television and radio campaigns, we offer a wide array of traditional marketing solutions tailored to your business needs. Let our creative team help you leave a lasting impression on your target audience and drive tangible results."/>
+
+      </Head>
+      <section>
+        <div className="h-[150px] sm:h-[350px] md:h-[450px]  w-full bg-center bg-no-repeat bg-cover opacity-100">
+          <ReactPlayer
+            url="/Assets/Videos/traditional.mp4"
+            width="100%"
+            height="100%"
+            muted={true}
+            playing={true}
+            pip={true}
+          />
+        </div>
+        <div className="service-cards flex justify-center my-12 lg:my-28">
+          <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+            {cardsData.map((eachCard, index) => {
+              if (eachCard.backImage) {
+                return (
+                  <div key={index}>
+                    <SingleServiceCardFlip {...eachCard} />
+                  </div>
+                );
+              }
               return (
                 <div key={index}>
-                  <SingleServiceCardFlip {...eachCard} />
+                  <SingleServiceCard {...eachCard} />
                 </div>
               );
-            }
-            return (
-              <div key={index}>
-                <SingleServiceCard {...eachCard} />
-              </div>
-            );
-          })}
+            })}
+          </div>
+          {showPopup && <PopUp />}
         </div>
-        {showPopup && <PopUp />}
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
           <div className="explore-items flex">
             <div className="row-1 flex flex-col mr-8">
-              <Link href={"/"} className="explore-item">
+              <Link href={"/about"} className="explore-item">
                 About
               </Link>
               <Link href={"/services/services"} className="explore-item">
@@ -86,12 +86,12 @@ const Footer = () => {
                 Digital Marketing
               </Link>
               <Link
-                href={"/services/graphic_designing"}
+                href={"/services/graphicdesigning"}
                 className="explore-item"
               >
                 Graphic Designing
               </Link>
-              <Link href={"/services/web_development"} className="explore-item">
+              <Link href={"/services/webdevelopment"} className="explore-item">
                 Web Development
               </Link>
             </div>

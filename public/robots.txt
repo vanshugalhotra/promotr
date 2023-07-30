@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.promotr.co.in
+
+# Sitemaps
+Sitemap: https://www.promotr.co.in/sitemap.xml

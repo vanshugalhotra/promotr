@@ -145,11 +145,11 @@ const Navbar = () => {
           },
           {
             name: "Graphic Designing",
-            url: "/services/graphic_designing",
+            url: "/services/graphicdesigning",
           },
           {
             name: "Web Development",
-            url: "/services/web_development",
+            url: "/services/webdevelopment",
           },
           {
             name: "Event Management",
@@ -166,7 +166,7 @@ const Navbar = () => {
     },
     {
       name: "About Us",
-      url: "/",
+      url: "/about",
     },
     {
       name: "Contact",

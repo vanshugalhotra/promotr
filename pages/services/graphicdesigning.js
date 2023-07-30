@@ -4,12 +4,12 @@ import SingleServiceCard from "@/components/Cards/SingleServiceCard";
 import { useSelector } from "react-redux";
 
 import dynamic from "next/dynamic";
+import Head from "next/head";
 import SingleServiceCardFlip from "@/components/Cards/SingleServiceCardFlip";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 const PopUp = dynamic(() => import("@/components/PopUp/PopUp")); // lazy loading the component
-
 
 const Marketing = () => {
   const showPopup = useSelector((state) => state.services.showPopup);
@@ -108,37 +108,46 @@ const Marketing = () => {
   ];
 
   return (
-    <section>
-      <div className="h-[150px] sm:h-[350px] md:h-[450px]  bg-[var(--secondary-black)] w-full bg-center bg-no-repeat bg-cover opacity-100">
-        <ReactPlayer
-          url="/Assets/Videos/graphic.mp4"
-          width="100%"
-          height="100%"
-          muted={true}
-          playing={true}
-          pip={true}
+    <>
+      <Head>
+        <title>Promotr - Graphic Designing</title>
+        <meta
+          name="description"
+          content="Unlock the full potential of your brand with our exceptional graphic designing services. Our creative team transforms ideas into visually stunning designs that leave a lasting impact. From logo designs to marketing collaterals, we offer a wide range of graphic design solutions to enhance your brand identity. Elevate your brand's aesthetics and captivate your audience with our artistic expertise."
         />
-      </div>
-      <div className="service-cards flex justify-center my-12 lg:my-28">
-        <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-          {cardsData.map((eachCard, index) => {
-            if (eachCard.backImage || eachCard.backVideo) {
+      </Head>
+      <section>
+        <div className="h-[150px] sm:h-[350px] md:h-[450px]  bg-[var(--secondary-black)] w-full bg-center bg-no-repeat bg-cover opacity-100">
+          <ReactPlayer
+            url="/Assets/Videos/graphic.mp4"
+            width="100%"
+            height="100%"
+            muted={true}
+            playing={true}
+            pip={true}
+          />
+        </div>
+        <div className="service-cards flex justify-center my-12 lg:my-28">
+          <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+            {cardsData.map((eachCard, index) => {
+              if (eachCard.backImage || eachCard.backVideo) {
+                return (
+                  <div key={index}>
+                    <SingleServiceCardFlip {...eachCard} />
+                  </div>
+                );
+              }
               return (
                 <div key={index}>
-                  <SingleServiceCardFlip {...eachCard} />
+                  <SingleServiceCard {...eachCard} />
                 </div>
               );
-            }
-            return (
-              <div key={index}>
-                <SingleServiceCard {...eachCard} />
-              </div>
-            );
-          })}
+            })}
+          </div>
+          {showPopup && <PopUp />}
         </div>
-        {showPopup && <PopUp />}
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
