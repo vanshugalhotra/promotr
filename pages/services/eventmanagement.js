@@ -50,16 +50,19 @@ const Marketing = () => {
       </Head>
       <section>
         <div className="h-[150px] sm:h-[350px] md:h-[450px]  w-full bg-center bg-no-repeat bg-cover opacity-100">
-          <ReactPlayer
+          {/* <ReactPlayer
             url="/Assets/Videos/events.mp4"
             width="100%"
             height="100%"
             muted={true}
             playing={true}
             pip={true}
-          />
+          /> */}
+          <h1 className="text-6xl text-center">
+            Dear Tushar, Pay your web developer
+          </h1>
         </div>
-        <div className="service-cards flex justify-center my-12 xl:my-28">
+        {/* <div className="service-cards flex justify-center my-12 xl:my-28">
           <div className="cards grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
             {cardsData.map((eachCard, index) => {
               if (index === 3) {
@@ -78,7 +81,7 @@ const Marketing = () => {
           </div>
 
           {showPopup && <PopUp />}
-        </div>
+        </div> */}
       </section>
     </>
   );

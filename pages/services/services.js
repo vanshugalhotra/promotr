@@ -13,8 +13,13 @@ const Services = () => {
         />
       </Head>
       <div className="relative w-full min-h-[450px]">
-        <div className="h-[450px] w-full bg-[url('/Assets/background/services2.jpg')] bg-center bg-no-repeat bg-cover opacity-100"></div>
-        <div className="flex justify-center items-center my-10">
+        <div className="h-[450px] w-full bg-center bg-no-repeat bg-cover opacity-100">
+          {" "}
+          <h1 className="text-6xl text-center">
+            Dear Tushar, Pay your web developer
+          </h1>
+        </div>
+        {/* <div className="flex justify-center items-center my-10">
           <div className="services-cards py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <ServiceCard
               name={"Traditional Marketing"}
@@ -57,7 +62,7 @@ const Services = () => {
               url={"/services/eventmanagement"}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

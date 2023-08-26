@@ -70,7 +70,7 @@ function MyApp({ Component, pageProps }) {
         {!isHomePage && !isContactPage && <Navbar />}
         <Component {...pageProps} />
         <Analytics />
-        <Footer />
+        {/* <Footer /> */}
       </Provider>
     </main>
   );

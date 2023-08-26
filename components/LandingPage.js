@@ -47,12 +47,12 @@ const LandingPage = () => {
                 <div className={`relative z-10`}>
                   <div className="text-4xl xs:text-5xl md:text-8xl text-[var(--main-black)] font-semibold text-center md:leading-[7.5rem] leading-normal  tracking-wide">
                     <span className="relative">
-                      Your
+                      Dear Tushar,
                       <span className="text-[var(--main-white)]">
                         {" "}
-                        Brand&apos;s
+                        Pay your Web Developer
                       </span>{" "}
-                      Biggest Cheerleaders
+                      Thank You!
                     </span>
                     <h6 className="text-xl capitalize tracking-wider relative top-6 underline">
                       Co-powered by AI
@@ -82,9 +82,9 @@ const LandingPage = () => {
       </div>
 
       {/* services content */}
-      <div className="bg-[var(--secondary-black)] relative w-full mb-16">
+
+      {/* <div className="bg-[var(--secondary-black)] relative w-full mb-16">
         <div className="absolute inset-0 before:absolute before:inset-0 before:w-full before:h-full before:bg-[url('/Assets/others/shape.png')] before:bg-center before:bg-no-repeat before:bg-cover before:opacity-[0.02] before:-z-0 before:invert"></div>
-        {/* Your content here */}
         <div className="services-content py-12 md:py-20 lg:py-28 flex justify-center items-center ">
           <div className="content grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:max-w-[1200px] mx-auto gap-5 items-center justify-center">
             <div
@@ -167,9 +167,9 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div
+      {/* <div
         className={`relative p-0 z-[1] contact-with-us-card ${Teko_Font.className}`}
       >
         <div className="container static max-w-[1200px] px-4 mx-auto">
@@ -189,7 +189,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

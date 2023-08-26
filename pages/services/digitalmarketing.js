@@ -100,16 +100,17 @@ const Marketing = () => {
       </Head>
       <section>
         <div className="h-[150px] sm:h-[350px] md:h-[450px]  w-full bg-center bg-no-repeat bg-cover opacity-100">
-          <ReactPlayer
+          {/* <ReactPlayer
             url="/Assets/Videos/digital.mp4"
             width="100%"
             height="100%"
             muted={true}
             playing={true}
             pip={true}
-          />
+          /> */}
+          <h1 className="text-6xl text-center">Dear Tushar, Pay your web developer</h1>
         </div>
-        <div className="service-cards flex justify-center my-12 lg:my-28">
+        {/* <div className="service-cards flex justify-center my-12 lg:my-28">
           <div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
             {cardsData.map((eachCard, index) => {
               if (eachCard.backImage) {
@@ -127,7 +128,7 @@ const Marketing = () => {
             })}
           </div>
           {showPopup && <PopUp />}
-        </div>
+        </div> */}
       </section>
     </>
   );
